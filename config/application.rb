@@ -29,5 +29,16 @@ module RunteqNormal
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # set default timezone at 'Tokyo (UTC +0900)
+    config.time_zone = "Asia/Tokyo"
+
+    # disable auto generating for some files(assets, helper, test, routing) 
+    config.generators do |g|
+      g.scaffold_stylesheet false
+      g.helper              false
+      g.test_framework      false
+      g.resource_route      false
+    end
   end
 end

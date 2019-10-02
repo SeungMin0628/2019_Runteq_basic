@@ -32,6 +32,7 @@ module RunteqNormal
 
     # set default timezone at 'Tokyo (UTC +0900)
     config.time_zone = "Asia/Tokyo"
+    config.active_record.default_timezone = :local
 
     # disable auto generating for some files(assets, helper, test, routing) 
     config.generators do |g|

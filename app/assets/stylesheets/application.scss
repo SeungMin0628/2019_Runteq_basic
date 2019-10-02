@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+// Use font-awesome5
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import './top'; 

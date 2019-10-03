@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1>ユーザー登録</h1>
+      <%= form_for(@user) do |f| %>
+        <!-- if exists error: render error messages -->
+        <%= render 'layouts/error_messages', model: f.object %>
+
+        <!-- Last name -->
+        <%= f.label :last_name, "性" %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+
+        <!-- First name -->
+        <%= f.label :first_name, "名" %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+
+        <!-- Email -->
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, class: 'form-control' %>
+
+        <!-- Password -->
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, class: 'form-control' %>
+
+        <!-- Password Confirmation -->
+        <%= f.label :password_confirmation, "パスワード確認" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+        <%= f.submit "登録", class: "btn btn-primary", data: {disable_with: "登録"} %>
+      <% end %>
+
+      <div class='text-center'>
+        <%= link_to  "ログインページへ", login_path %>
+      </div>
+    </div>
+  </div>
+</div>

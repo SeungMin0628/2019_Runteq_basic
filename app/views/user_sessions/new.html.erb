@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1>ログイン</h1>
+      <%= form_with url: login_path, method: :post do |f| %>
+        <!-- Email Address -->
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, class: 'form-control' %>
+
+        <!-- Password -->
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, class: 'form-control' %>
+
+        <%= f.submit "ログイン", class: 'btn btn-primary' %>
+      <% end %>
+    
+      <div class='text-center'>
+        <%= link_to "登録ページへ", new_user_path %>
+        <%= link_to "パスワードをお忘れの方はこちら", '#' %>
+      </div>
+    </div>
+  </div>
+</div>

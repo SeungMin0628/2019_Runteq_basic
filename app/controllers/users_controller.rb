@@ -8,7 +8,9 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to login_path
+      flash[:success] = "新規加入に成功しました。"
     else
+      flash.now[:alert] = "新規加入に失敗しました。"
       render :new
     end
   end

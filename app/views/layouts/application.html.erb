@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <%= render partial: 'shared/flash' %>
+
     <% if logged_in? %>
       <!-- for user -->
       <%= render partial: "shared/header" %>

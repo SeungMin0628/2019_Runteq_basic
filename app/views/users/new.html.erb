@@ -7,26 +7,38 @@
         <%= render 'layouts/error_messages', model: f.object %>
 
         <!-- Last name -->
-        <%= f.label :last_name, "性" %>
-        <%= f.text_field :last_name, class: 'form-control' %>
+        <div class="form-group">
+          <%= f.label :last_name, "性" %>
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
 
         <!-- First name -->
-        <%= f.label :first_name, "名" %>
-        <%= f.text_field :first_name, class: 'form-control' %>
+        <div class="form-group">
+          <%= f.label :first_name, "名" %>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
 
         <!-- Email -->
-        <%= f.label :email, "メールアドレス" %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <div class="form-group">
+          <%= f.label :email, "メールアドレス" %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
 
         <!-- Password -->
-        <%= f.label :password, "パスワード" %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <div class="form-group">
+          <%= f.label :password, "パスワード" %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
 
         <!-- Password Confirmation -->
-        <%= f.label :password_confirmation, "パスワード確認" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "パスワード確認" %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
 
-        <%= f.submit "登録", class: "btn btn-primary", data: {disable_with: "登録"} %>
+        <div class="actions">
+          <%= f.submit "登録", class: "btn btn-primary", data: {disable_with: "登録"} %>
+        </div>
       <% end %>
 
       <div class='text-center'>

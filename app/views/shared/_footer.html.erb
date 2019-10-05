@@ -5,8 +5,18 @@
         <div class="copyright">
           <span>
             Copyright © 2018. RUNTEQ / SELECT LANGUAGE
+
+            <!-- 
+              TODO : 
+              　バグあり → GET以外のHTTPリクエストが行われた直後、言語を切り替えると
+                          ＝＞(理想) 現在使っているページを再読み込みするのではなく
+                          ＝＞(現状) 直前リクエストのURLにGETリクエストを送る
+            -->
             <%= link_to  "日本語(Japanese)", url_for(locale: :ja), class: 'badge badge-secondary' %>
             <%= link_to  "English", url_for(locale: :en), class: 'badge badge-secondary' %>
+
+            <%# link_to  "日本語(Japanese)", root_path(locale: :ja), class: 'badge badge-secondary' %>
+            <%# link_to  "English", root_path(locale: :en), class: 'badge badge-secondary' %>
           </span>
         </div>
       </div>

@@ -5,5 +5,5 @@ module ApplicationHelper
       when "alert" then "alert-warning"
       else "alert-" + level
     end
-  end 
+  end
 end

@@ -40,6 +40,12 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Use font-awesome5
 gem 'font-awesome-sass', '~> 5.0.6'
 
+# Use sorcery, Magical Authentication
+gem 'sorcery'
+
+# Use pry-byebug, debuging tools
+gem 'pry-byebug'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

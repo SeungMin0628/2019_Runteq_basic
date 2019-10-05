@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = '新規加入に成功しました。'
+      flash[:success] = t('flash.alert.users.create')
       redirect_to login_path
     else
-      flash.now[:alert] = '新規加入に失敗しました。'
+      flash.now[:alert] = t('flash.alert.users.create')
       render :new
     end
   end

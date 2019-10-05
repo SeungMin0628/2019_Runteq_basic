@@ -41,5 +41,10 @@ module RunteqNormal
       g.test_framework      false
       g.resource_route      false
     end
+
+    # config I18n
+    config.i18n.default_locale = :ja
+    I18n.available_locales = [:en, :ja]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
   end
 end

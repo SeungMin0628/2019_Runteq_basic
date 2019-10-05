@@ -1,0 +1,16 @@
+ja:
+  flash:
+    success:
+      user_sessions:
+        create: "こんにちは、%{first_name}さん"
+        destroy: 'ログアウトに成功しました。'
+
+      users:
+        create: '新規加入に成功しました。'
+
+    alert:
+      user_sessions:
+        create: 'メールアドレスやパスワードが間違っています。'
+
+      users:
+        create: '新規加入に失敗しました。'

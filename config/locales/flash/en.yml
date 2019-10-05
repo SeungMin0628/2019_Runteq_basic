@@ -1,0 +1,16 @@
+en:
+  flash:
+    success:
+      user_sessions:
+        create: "Hello, %{first_name}!"
+        destroy: 'Log out is successed.'
+
+      users:
+        create: 'Welcome! Please log in.'
+
+    alert:
+      user_sessions:
+        create: 'Log in is failed. Please check your email address or password.'
+
+      users:
+        create: 'Sign in is failed. Please check below messages.'

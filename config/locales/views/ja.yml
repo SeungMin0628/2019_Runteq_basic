@@ -1,0 +1,18 @@
+ja:
+  shared:
+    bookmark_index: 'ブックマーク一覧'
+    board: '掲示板'
+    board_index: '掲示板一覧'
+    board_new: '掲示板作成'
+    login: 'ログイン'
+    logout: 'ログアウト'
+    profile: 'プロフィール'
+    user_name: "%{last_name} %{first_name}"
+  user_sessions:
+    register_link: '登録ページへ'
+    reset_password_link: 'パスワードをお忘れの方はこちら'
+  users:
+    new:
+      title: 'ユーザー登録'
+      submit: '登録'
+      login_link: 'ログインページへ'

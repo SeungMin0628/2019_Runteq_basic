@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # before_save { self.email = email.downcase }
 
   # Validations
-  validates :email, { presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP } }
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }

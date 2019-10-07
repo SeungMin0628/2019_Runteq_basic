@@ -37,7 +37,7 @@
           %>
           <div class="dropdown-menu dropdown-menu-right">
             <div class='dropdown-item'>
-              <%= t('shared.user_name', first_name: current_user.first_name, last_name: current_user.last_name) %>
+              <%= current_user.decorate.full_name %>
             </div>
             <div class="dropdown-divider"></div>
             <%= link_to  t('shared.profile'), '#', class: 'dropdown-item' %>

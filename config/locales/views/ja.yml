@@ -7,7 +7,6 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     profile: 'プロフィール'
-    user_name: "%{last_name} %{first_name}"
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'

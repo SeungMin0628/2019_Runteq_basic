@@ -2,7 +2,7 @@
   <div class="row">
     <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1><%= t('shared.login') %></h1>
-      <%= form_with model: @user, url: login_path, method: :post, local: true do |f| %>
+      <%= form_with url: login_path, method: :post, local: true do |f| %>
         <div class="form-group">
           <!-- Email Address -->
           <%= f.label :email, User.human_attribute_name('email') %>

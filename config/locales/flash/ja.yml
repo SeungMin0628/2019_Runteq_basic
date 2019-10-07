@@ -2,15 +2,15 @@ ja:
   flash:
     success:
       user_sessions:
-        create: "こんにちは、%{first_name}さん"
-        destroy: 'ログアウトに成功しました。'
+        create: "ログインしました"
+        destroy: 'ログアウトしました'
 
       users:
-        create: '新規加入に成功しました。'
+        create: 'ユーザー登録が完了しました'
 
-    alert:
+    danger:
       user_sessions:
-        create: 'メールアドレスやパスワードが間違っています。'
+        create: 'ログインに失敗しました'
 
       users:
-        create: '新規加入に失敗しました。'
+        create: 'ユーザー登録に失敗しました'

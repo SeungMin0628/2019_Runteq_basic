@@ -1,4 +1,5 @@
 en:
+  # フラッシュメッセージ
   flash:
     success:
       user_sessions:

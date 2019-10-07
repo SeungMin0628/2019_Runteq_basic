@@ -7,10 +7,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      # ユーザー登録成功
       flash[:success] = t('flash.success.users.create')
       redirect_to login_path
     else
-      flash.now[:alert] = t('flash.alert.users.create')
+      # ユーザー登録失敗
+      flash.now[:danger] = t('flash.danger.users.create')
       render :new
     end
   end

@@ -12,16 +12,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto main-nav align-items-center">
         <li class="nav-item dropdown dropdown-slide">
-          <%= link_to("掲示板", "#", class: 'nav-link dropdown-toggle', data: {toggle: 'dropdown'}, aria: {haspopup: 'true'}) %>
+          <%= link_to(t('shared.board'), "#", class: 'nav-link dropdown-toggle', data: {toggle: 'dropdown'}, aria: {haspopup: 'true'}) %>
 
           <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to('掲示板一覧', '#', class: 'dropdown-item') %>
-            <%= link_to('掲示板作成', '#', class: 'dropdown-item') %>
+            <%= link_to(t('shared.board_index'), '#', class: 'dropdown-item') %>
+            <%= link_to(t('shared.board_new'), '#', class: 'dropdown-item') %>
           </div>
         </li>
 
         <li class="nav-item">
-          <%= link_to('ブックマーク一覧', '#', class: 'nav-link') %>
+          <%= link_to(t('shared.bookmark_index'), '#', class: 'nav-link') %>
         </li>
 
         <li class="nav-item dropdown dropdown-slide">
@@ -36,10 +36,12 @@
             )
           %>
           <div class="dropdown-menu dropdown-menu-right">
-            <div class='dropdown-item'>らんてっく たろう</div>
+            <div class='dropdown-item'>
+              <%= t('shared.user_name', first_name: current_user.first_name, last_name: current_user.last_name) %>
+            </div>
             <div class="dropdown-divider"></div>
-            <%= link_to  "プロフィール", '#', class: 'dropdown-item' %>
-            <%= link_to  "ログアウト", logout_path, method: :delete, class: 'dropdown-item' %>
+            <%= link_to  t('shared.profile'), '#', class: 'dropdown-item' %>
+            <%= link_to  t('shared.logout'), logout_path, method: :delete, class: 'dropdown-item' %>
           </div>
         </li>
       </ul>

@@ -1,0 +1,18 @@
+en:
+  shared:
+    bookmark_index: 'Bookmark list'
+    board: 'Board'
+    board_index: 'Board list'
+    board_new: 'Write board'
+    login: 'Log in'
+    logout: 'Log out'
+    profile: 'Profile'
+    user_name: "%{first_name} %{last_name}"
+  user_sessions:
+    register_link: 'Sign up'
+    reset_password_link: 'Forgot password?'
+  users:
+    new:
+      title: 'Sign up'
+      submit: 'Submit'
+      login_link: 'Already have an account?'

@@ -1,48 +1,48 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1>ユーザー登録</h1>
-      <%= form_for(@user) do |f| %>
+      <h1><%= t('users.new.title') %></h1>
+      <%= form_with(model: @user, local: true) do |f| %>
         <!-- if exists error: render error messages -->
         <%= render 'layouts/error_messages', model: f.object %>
 
         <!-- Last name -->
         <div class="form-group">
-          <%= f.label :last_name, "姓" %>
+          <%= f.label :last_name %>
           <%= f.text_field :last_name, class: 'form-control' %>
         </div>
 
         <!-- First name -->
         <div class="form-group">
-          <%= f.label :first_name, "名" %>
+          <%= f.label :first_name %>
           <%= f.text_field :first_name, class: 'form-control' %>
         </div>
 
         <!-- Email -->
         <div class="form-group">
-          <%= f.label :email, "メールアドレス" %>
+          <%= f.label :email %>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
 
         <!-- Password -->
         <div class="form-group">
-          <%= f.label :password, "パスワード" %>
+          <%= f.label :password %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
 
         <!-- Password Confirmation -->
         <div class="form-group">
-          <%= f.label :password_confirmation, "パスワード確認" %>
+          <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
 
         <div class="actions">
-          <%= f.submit "登録", class: "btn btn-primary", data: {disable_with: "登録"} %>
+          <%= f.submit t('users.new.submit'), class: "btn btn-primary", data: {disable_with: "登録"} %>
         </div>
       <% end %>
 
       <div class='text-center'>
-        <%= link_to  "ログインページへ", login_path %>
+        <%= link_to  t('users.new.login_link'), login_path %>
       </div>
     </div>
   </div>

@@ -2,37 +2,37 @@
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1><%= t('users.new.title') %></h1>
-      <%= form_for(@user) do |f| %>
+      <%= form_with(model: @user, local: true) do |f| %>
         <!-- if exists error: render error messages -->
         <%= render 'layouts/error_messages', model: f.object %>
 
         <!-- Last name -->
         <div class="form-group">
-          <%= f.label :last_name, User.human_attribute_name('last_name') %>
+          <%= f.label :last_name %>
           <%= f.text_field :last_name, class: 'form-control' %>
         </div>
 
         <!-- First name -->
         <div class="form-group">
-          <%= f.label :first_name, User.human_attribute_name('first_name') %>
+          <%= f.label :first_name %>
           <%= f.text_field :first_name, class: 'form-control' %>
         </div>
 
         <!-- Email -->
         <div class="form-group">
-          <%= f.label :email, User.human_attribute_name('email') %>
+          <%= f.label :email %>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
 
         <!-- Password -->
         <div class="form-group">
-          <%= f.label :password, User.human_attribute_name('password') %>
+          <%= f.label :password %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
 
         <!-- Password Confirmation -->
         <div class="form-group">
-          <%= f.label :password_confirmation, User.human_attribute_name('password_confirmation') %>
+          <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
 

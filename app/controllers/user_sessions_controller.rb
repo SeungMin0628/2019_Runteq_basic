@@ -1,7 +1,5 @@
 class UserSessionsController < ApplicationController
-  def new
-    @user = User.new
-  end
+  def new; end
 
   def create
     @user = login(params[:email], params[:password])

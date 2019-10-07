@@ -12,9 +12,8 @@ class UserDecorator < Draper::Decorator
 
   def full_name
     case I18n.locale
-    when :ja then "#{object.last_name} #{object.first_name}" 
-    else "#{object.first_name} #{object.last_name}" 
+    when :ja then "#{object.last_name} #{object.first_name}"
+    else "#{object.first_name} #{object.last_name}"
     end
-    
   end
 end

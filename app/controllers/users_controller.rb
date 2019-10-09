@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login, only: %i[new create]
+
   def new
     @user = User.new
   end
@@ -8,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       # ユーザー登録成功
-      redirect_to login_path, success: t('flash.success.users.create')
+      redirect_to boards_path, success: t('flash.success.users.create')
     else
       # ユーザー登録失敗
       flash.now[:danger] = t('flash.danger.users.create')

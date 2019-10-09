@@ -12,6 +12,7 @@ en:
     alert:
       user_sessions:
         create: 'Log in is failed. Please check your email address or password.'
+        need_login: 'Access failed. Please login.'
 
       users:
         create: 'Sign in is failed. Please check below messages.'

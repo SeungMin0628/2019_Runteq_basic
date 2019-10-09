@@ -2,6 +2,7 @@ en:
   activerecord:
     models:
       user: 'User'
+      board: 'Board'
     attributes:
       user:
         first_name: 'First name'

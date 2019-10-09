@@ -10,4 +10,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :last_name, :first_name, presence: true
+
+  # Relations
+  has_many :boards
 end

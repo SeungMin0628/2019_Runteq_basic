@@ -11,6 +11,8 @@ ja:
     danger:
       user_sessions:
         create: 'ログインに失敗しました'
+        need_login: 'ログインしてください'
 
       users:
         create: 'ユーザー登録に失敗しました'
+        

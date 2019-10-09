@@ -7,6 +7,8 @@ en:
     login: 'Log in'
     logout: 'Log out'
     profile: 'Profile'
+    search_keyword: 'input keyword...'
+    search: 'Search'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'
@@ -15,3 +17,6 @@ en:
       title: 'Sign up'
       submit: 'Submit'
       login_link: 'Already have an account?'
+  boards:
+    index:
+      no_data: "Oops! We couldn't find anything."

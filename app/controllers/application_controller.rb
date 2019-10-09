@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
-  private 
+  private
 
   # redefinition of 'sorcery#not_authenticated'
   # ログインしなかったユーザーがアクセスした際、警告メッセージを表示しログイン画面に遷移させる

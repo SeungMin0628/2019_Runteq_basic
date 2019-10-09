@@ -12,5 +12,5 @@ class User < ApplicationRecord
   validates :last_name, :first_name, presence: true
 
   # Relations
-  has_many :boards
+  has_many :boards, dependent: :destroy
 end

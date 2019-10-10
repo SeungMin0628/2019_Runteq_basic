@@ -43,9 +43,6 @@ gem 'font-awesome-sass', '~> 5.0.6'
 # Use sorcery, Magical Authentication
 gem 'sorcery'
 
-# Use pry-byebug, debuging tools
-gem 'pry-byebug'
-
 # Use i18n
 gem 'rails-i18n', '~> 5.1'
 
@@ -60,6 +57,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker'
   gem 'gimei'
+
+  # Use pry-byebug, debuging tools
+  gem 'pry-byebug'
 end
 
 group :development do

@@ -5,4 +5,7 @@ class Board < ApplicationRecord
 
   # Relations
   belongs_to :user
+
+  # Scopes
+  scope :search, -> (keyword) { where(['title LIKE ?', "%#{keyword}%"]) }
 end

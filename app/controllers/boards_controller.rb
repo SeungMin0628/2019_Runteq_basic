@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
   def index
-    @boards = Board.includes(:user).where(['title LIKE ?', "%#{params[:search]}%"]).page(params[:page])
+    @boards = Board.includes(:user).search(params[:search]).page(params[:page])
   end
 end

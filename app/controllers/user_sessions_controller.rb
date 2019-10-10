@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  skip_before_action :require_login, only: %i[new create]
+
   def new; end
 
   def create
@@ -6,7 +8,7 @@ class UserSessionsController < ApplicationController
 
     if @user
       # ログイン成功
-      redirect_back_or_to root_path, success: t('flash.success.user_sessions.create')
+      redirect_back_or_to boards_path, success: t('flash.success.user_sessions.create')
     else
       # ログイン失敗
       flash.now[:danger] = t('flash.danger.user_sessions.create')

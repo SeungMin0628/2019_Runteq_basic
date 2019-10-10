@@ -1,0 +1,43 @@
+<div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+  <div id="product-id-33">
+    <div class="card">
+      <%= image_tag('sample.jpg', class: 'card-img-top', width: 300, height: 200) %>
+      <div class="card-body">
+        <h4 class="card-title">
+          <%= 
+            link_to(
+              board.title, 
+              # TODO : 掲示板のSHOWページを実装する際に、遷移先を入れ替えよう。
+              # board_path(id: board.id)
+              '#'
+            )
+          %>
+        </h4>
+        <div class="bookmark">
+          <%= 
+            link_to(
+              content_tag(:i, '', class: 'fa fa-star-o'),
+              '#', # /bookmarks?board_id=33 => ブックマークをつける?
+              id: 'btn-bookmark-1',
+              data: { remote: true, method: :post },
+              rel: 'nofollow'
+            ) 
+          %>
+        </div>
+
+
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <i class="fa fa-user"></i>
+            <%= board.user.decorate.full_name %>
+          </li>
+          <li class="list-inline-item">
+            <i class="fa fa-calendar"></i>
+            <%= l board.created_at, format: :long %>
+          </li>
+        </ul>
+        <%= content_tag :p, board.body, class: 'card-text' %>
+      </div>
+    </div>
+  </div>
+</div>

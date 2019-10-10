@@ -15,7 +15,7 @@
           <%= link_to(t('shared.board'), "#", class: 'nav-link dropdown-toggle', data: {toggle: 'dropdown'}, aria: {haspopup: 'true'}) %>
 
           <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to(t('shared.board_index'), '#', class: 'dropdown-item') %>
+            <%= link_to(t('shared.board_index'), boards_path, class: 'dropdown-item') %>
             <%= link_to(t('shared.board_new'), '#', class: 'dropdown-item') %>
           </div>
         </li>

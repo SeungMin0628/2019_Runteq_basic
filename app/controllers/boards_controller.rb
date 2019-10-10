@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   def index
     @boards = Board.includes(:user).recent.search(params[:search]).page(params[:page])
   end
-  
+
   def new
     @board = Board.new
   end

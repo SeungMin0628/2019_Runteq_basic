@@ -8,4 +8,5 @@ class Board < ApplicationRecord
 
   # Scopes
   scope :search, ->(keyword) { where(['title LIKE ?', "%#{keyword}%"]) }
+  scope :recent, -> { order(created_at: :desc) }
 end

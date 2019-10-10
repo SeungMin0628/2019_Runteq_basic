@@ -8,6 +8,9 @@ ja:
       users:
         create: 'ユーザー登録が完了しました'
 
+      boards:
+        create: '掲示板の作成が完了しました'
+
     danger:
       user_sessions:
         create: 'ログインに失敗しました'
@@ -15,4 +18,6 @@ ja:
 
       users:
         create: 'ユーザー登録に失敗しました'
-        
+
+      boards:
+        create: '掲示板を作成できませんでした'

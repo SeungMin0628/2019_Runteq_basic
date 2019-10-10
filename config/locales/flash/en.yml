@@ -9,10 +9,16 @@ en:
       users:
         create: 'Welcome! Please log in.'
 
-    alert:
+      boards:
+        create: 'Your board is generated successfully.'
+
+    danger:
       user_sessions:
         create: 'Log in is failed. Please check your email address or password.'
         need_login: 'Access failed. Please login.'
 
       users:
         create: 'Sign in is failed. Please check below messages.'
+
+      boards:
+        create: 'Submit failed. Please check again.'

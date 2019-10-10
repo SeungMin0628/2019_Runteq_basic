@@ -7,5 +7,5 @@ class Board < ApplicationRecord
   belongs_to :user
 
   # Scopes
-  scope :search, -> (keyword) { where(['title LIKE ?', "%#{keyword}%"]) }
+  scope :search, ->(keyword) { where(['title LIKE ?', "%#{keyword}%"]) }
 end

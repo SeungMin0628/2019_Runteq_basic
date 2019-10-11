@@ -10,7 +10,7 @@ en:
         create: 'Welcome! Please log in.'
 
       boards:
-        create: 'Your board is generated successfully.'
+        create: 'Your board is created successfully.'
 
     danger:
       user_sessions:

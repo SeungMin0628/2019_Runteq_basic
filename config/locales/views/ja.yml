@@ -27,3 +27,6 @@ ja:
   boards:
     index:
       no_data: "掲示板がありません"
+    new:
+      title: '掲示板作成'
+      submit: '作成'

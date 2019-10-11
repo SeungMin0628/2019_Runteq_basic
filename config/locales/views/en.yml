@@ -20,3 +20,6 @@ en:
   boards:
     index:
       no_data: "Oops! We couldn't find anything."
+    new:
+      title: 'New board'
+      submit: 'Submit new board'

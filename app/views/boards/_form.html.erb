@@ -1,0 +1,13 @@
+<%= form_with(model: @board, local: true, class: 'new_board') do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :body %>
+    <%= f.text_area :body, row: 10, style: 'height: 200px; resize: none', class: "form-control noresize" %>
+  </div>
+  <div class="actions">
+    <%= f.submit t('boards.new.submit'), class: 'btn btn-primary', data: { disable_with: t('boards.new.submit') } %>
+  </div>
+<% end %>

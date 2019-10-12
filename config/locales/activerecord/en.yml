@@ -13,3 +13,4 @@ en:
       board:
         title: 'Title'
         body: 'Body'
+        board_image: 'Thumbnail'

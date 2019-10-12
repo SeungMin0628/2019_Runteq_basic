@@ -52,6 +52,9 @@ gem 'draper'
 # Use kaminari, for Pagination
 gem 'kaminari', '~> 0.17.0'
 
+# User CarrierWave, solution for file uploads for Rails
+gem 'carrierwave', '~> 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,4 +1,7 @@
 <%= form_with(model: @board, local: true, class: 'new_board') do |f| %>
+  <!-- if exists error: render error messages -->
+  <%= render 'layouts/error_messages', model: f.object %>
+
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>

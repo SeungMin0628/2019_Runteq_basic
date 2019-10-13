@@ -4,7 +4,7 @@ $(function() {
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        $('#board_image_prev').attr('src', e.target.result);
+        $('#js-board_image_prev').attr('src', e.target.result);
       }
       reader.readAsDataURL(input.files[0]);
     }

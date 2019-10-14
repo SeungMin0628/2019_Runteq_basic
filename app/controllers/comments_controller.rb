@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Board.find(params[:board_id]).comments.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment = current_user.comments.build(comment_params)
+    @comment.board_id = params[:board_id]
 
     if @comment.save
       flash[:success] = t('flash.success.comments.create')

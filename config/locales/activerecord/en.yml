@@ -3,6 +3,7 @@ en:
     models:
       user: 'User'
       board: 'Board'
+      comment: 'Comment'
     attributes:
       user:
         first_name: 'First name'
@@ -14,3 +15,5 @@ en:
         title: 'Title'
         body: 'Body'
         board_image: 'Thumbnail'
+      comment:
+        body: 'Comment'

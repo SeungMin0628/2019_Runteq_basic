@@ -1,0 +1,56 @@
+<div class="container pt-5">
+    <div class="row mb-3">
+      <div class="col-lg-8 offset-lg-2">
+        <%= content_tag(:h1, t('boards.show.title')) %>
+        <%# 掲示板内容 %>
+        <article class="card">
+          <div class="card-body">
+            <div class='row'>
+              <div class='col-md-3'>
+                <%= image_tag(image_url(@board.board_image), width: 300, height: 200, class: 'card-img-top img-fluid') %>
+              </div>
+              <div class='col-md-9'>
+                <%= content_tag(:h3, @board.title, style: 'display: inline;') %>
+                <ul class="list-inline">
+                  <%= content_tag(:li, "by #{@board.user.decorate.full_name}", class: 'list-inline-item') %>
+                  <%= content_tag(:li, l(@board.created_at, format: :long), class: 'list-inline-item') %>
+                </ul>
+              </div>
+            </div>
+            <%= content_tag(:p, @board.body, class: 'mb-0') %>
+          </div>
+        </article>
+      </div>
+    </div>
+  
+    <%# コメントフォーム %>
+    <div class="row mb-3">
+      <div class="col-lg-8 offset-lg-2">
+        <%= form_with(model: @comment, url: board_comments_path(board_id: @board.id), method: :post, local: true) do |f| %>
+          <%= f.label :body %>
+          <%= f.text_area :body, row: 4, placeholder: t('comments.new.body_placeholder'), class: 'form-control mb-3' %>
+          <%= f.submit t('comments.new.submit'), class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  
+  
+    <%# コメントエリア %>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <table id="js-table-comment" class="table">
+          <% if @board.comments.exists? %>
+            <%= render @board.comments %>
+          <% else %>
+            <div class="col-sm col-md col-lg mb-3">
+              <div class="card">
+                <div class='card-body'>
+                  <%= content_tag(:span, t('comments.index.no_data'), class: 'text-muted') %>
+                </div>
+              </div>
+            </div>    
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>

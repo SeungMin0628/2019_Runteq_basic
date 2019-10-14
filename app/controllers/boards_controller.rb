@@ -24,6 +24,11 @@ class BoardsController < ApplicationController
     end
   end
 
+  def show
+    @board = Board.find(params[:id])
+    @comment = Comment.new
+  end
+
   private
 
   def board_params

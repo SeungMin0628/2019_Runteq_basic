@@ -13,4 +13,5 @@ class User < ApplicationRecord
 
   # Relations
   has_many :boards, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

@@ -7,6 +7,7 @@ class Board < ApplicationRecord
   validates :body, presence: true, length: { maximum: 65535 }
 
   # Relations
+  has_many :comments, dependent: :destroy
   belongs_to :user
 
   # Scopes

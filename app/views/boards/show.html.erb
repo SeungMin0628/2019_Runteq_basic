@@ -27,7 +27,6 @@
     <div class="row mb-3">
       <div class="col-lg-8 offset-lg-2">
         <%= form_with(model: @comment, url: board_comments_path(board_id: @board.id), method: :post, local: true) do |f| %>
-          <%= f.hidden_field :board_id, value: @board.id %>
           <%= f.label :body %>
           <%= f.text_area :body, row: 4, placeholder: t('comments.new.body_placeholder'), class: 'form-control mb-3' %>
           <%= f.submit t('comments.new.submit'), class: 'btn btn-primary' %>

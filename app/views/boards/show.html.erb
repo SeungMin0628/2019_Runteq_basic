@@ -39,19 +39,19 @@
     <%# コメントエリア %>
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
-        <table id="js-table-comment" class="table">
-          <% if @board.comments.exists? %>
+        <% if @board.comments.exists? %>
+          <table id="js-table-comment" class="table">
             <%= render @board.comments %>
-          <% else %>
-            <div class="col-sm col-md col-lg mb-3">
-              <div class="card">
-                <div class='card-body'>
-                  <%= content_tag(:span, t('comments.index.no_data'), class: 'text-muted') %>
-                </div>
+          </table>
+        <% else %>
+          <div class="col-sm col-md col-lg mb-3">
+            <div class="card">
+              <div class='card-body'>
+                <%= content_tag(:span, t('comments.index.no_data'), class: 'text-muted') %>
               </div>
-            </div>    
-          <% end %>
-        </table>
+            </div>
+          </div>    
+        <% end %>
       </div>
     </div>
   </div>

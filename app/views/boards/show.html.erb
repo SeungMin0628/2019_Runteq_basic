@@ -41,7 +41,7 @@
       <div class="col-lg-8 offset-lg-2">
         <% if @board.comments.exists? %>
           <table id="js-table-comment" class="table">
-            <%= render @board.comments %>
+            <%= render @board.comments.includes(:user) %>
           </table>
         <% else %>
           <div class="col-sm col-md col-lg mb-3">

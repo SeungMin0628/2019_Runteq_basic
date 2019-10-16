@@ -17,7 +17,8 @@
                 </ul>
               </div>
             </div>
-            <%= simple_format(@board.body, class: 'mb-0').html_safe %>
+            <%= simple_format(@board.body, class: 'mb-0') %>
+            <%# content_tag(:p, @board.body, class:'mb-0') %>
           </div>
         </article>
       </div>

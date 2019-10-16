@@ -29,7 +29,7 @@
             <%= l board.created_at, format: :long %>
           </li>
         </ul>
-        <%= content_tag :p, board.body, class: 'card-text' %>
+        <%= simple_format(board.body, class: 'card-text').html_safe %>
       </div>
     </div>
   </div>

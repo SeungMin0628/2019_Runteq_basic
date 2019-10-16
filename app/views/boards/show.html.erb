@@ -10,14 +10,15 @@
                 <%= image_tag(image_url(@board.board_image), width: 300, height: 200, class: 'card-img-top img-fluid') %>
               </div>
               <div class='col-md-9'>
-                <%= content_tag(:h3, @board.title, style: 'display: inline;') %>
+                <%= content_tag(:h3, @board.title, class: 'd-inline') %>
                 <ul class="list-inline">
                   <%= content_tag(:li, "by #{@board.user.decorate.full_name}", class: 'list-inline-item') %>
                   <%= content_tag(:li, l(@board.created_at, format: :long), class: 'list-inline-item') %>
                 </ul>
               </div>
             </div>
-            <%= content_tag(:p, @board.body, class: 'mb-0') %>
+            <%= simple_format(@board.body, class: 'mb-0') %>
+            <%# content_tag(:p, @board.body, class: 'mb-0') %>
           </div>
         </article>
       </div>

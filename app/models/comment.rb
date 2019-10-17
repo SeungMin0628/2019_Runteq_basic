@@ -5,4 +5,9 @@ class Comment < ApplicationRecord
   # Relations
   belongs_to :user
   belongs_to :board
+
+  # Instance method
+  def owned_by? (user)
+    self.user_id == user.try(:id)
+  end 
 end

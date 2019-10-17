@@ -11,7 +11,7 @@
         id: "js-comment-#{comment.id}"
       )
     %>
-    <% if current_user == comment.user %>
+    <% if comment.owned_by? current_user %>
     <%# Only writer, show edit form %>
       <div class="d-none">
         <%= content_tag(:textarea, comment.body, class: 'form-control mb-1') %>
@@ -23,7 +23,7 @@
 
   <td class="action">
     <ul class="list-inline justify-content-center comment-float-right">
-      <% if current_user == comment.user %>
+      <% if comment.owned_by? current_user %>
       <%# Only writer, show edit and delete action button %>
         <li class="list-inline-item">
           <a href="#">

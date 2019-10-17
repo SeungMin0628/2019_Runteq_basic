@@ -7,7 +7,7 @@
           <div class="card-body">
             <div class='row'>
               <div class='col-md-3'>
-                <%= image_tag(image_url(@board.board_image), width: 300, height: 200, class: 'card-img-top img-fluid') %>
+                <%= image_tag(@board.board_image.url, width: 300, height: 200, class: 'card-img-top img-fluid') %>
               </div>
               <div class='col-md-9'>
                 <%= content_tag(:h3, @board.title, class: 'd-inline') %>

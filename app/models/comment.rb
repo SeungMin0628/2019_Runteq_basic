@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
   belongs_to :board
 
   # Instance method
-  def owned_by? (user)
-    self.user_id == user.try(:id)
-  end 
+  def owned_by?(user)
+    user_id == user.try(:id)
+  end
 end

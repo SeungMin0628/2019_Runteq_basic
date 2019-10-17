@@ -8,6 +8,6 @@ class Comment < ApplicationRecord
 
   # Instance method
   def owned_by?(user)
-    user_id == user.try(:id)
+    user_id == user&.id
   end
 end

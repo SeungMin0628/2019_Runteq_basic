@@ -10,10 +10,10 @@
                 <%= image_tag(@board.board_image.url, width: 300, height: 200, class: 'card-img-top img-fluid') %>
               </div>
               <div class='col-md-9'>
-                <%= content_tag(:h3, @board.title, class: 'd-inline') %>
+                <h3 class="d-inline"><%= @board.title %></h3>
                 <ul class="list-inline">
-                  <%= content_tag(:li, "by #{@board.user.decorate.full_name}", class: 'list-inline-item') %>
-                  <%= content_tag(:li, l(@board.created_at, format: :long), class: 'list-inline-item') %>
+                  <li class='list-inline-item'><%= "by #{@board.user.decorate.full_name}" %></li>
+                  <li class='list-inline-item'><%= l(@board.created_at, format: :long) %></li>
                 </ul>
               </div>
             </div>
@@ -46,7 +46,7 @@
           <div class="col-sm col-md col-lg mb-3">
             <div class="card">
               <div class='card-body'>
-                <%= content_tag(:span, t('comments.index.no_data'), class: 'text-muted') %>
+                <span class='text-muted'><%= t('comments.index.no_data') %></span>
               </div>
             </div>
           </div>    

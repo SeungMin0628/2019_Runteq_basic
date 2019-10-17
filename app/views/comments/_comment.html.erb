@@ -14,9 +14,9 @@
     <% if comment.owned_by? current_user %>
     <%# Only writer, show edit form %>
       <div class="d-none">
-        <%= content_tag(:textarea, comment.body, class: 'form-control mb-1') %>
-        <%= content_tag(:button, t('shared.cancel'), class: 'btn btn-light') %>
-        <%= content_tag(:button, t('shared.update'), class: 'btn btn-success') %>
+        <textarea class="form-control mb-1"><%= comment.body %></textarea>
+        <button class='btn btn-light'><%= t('shared.cancel') %></button>
+        <button class='btn btn-success'><%= t('shared.update') %></button>
       </div>
     <% end %>
   </td>

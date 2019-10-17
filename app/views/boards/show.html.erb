@@ -40,7 +40,7 @@
       <div class="col-lg-8 offset-lg-2">
         <% if @comments %>
           <table id="js-table-comment" class="table">
-            <%= render @board.comments.includes(:user) %>
+            <%= render @comments %>
           </table>
         <% else %>
           <div class="col-sm col-md col-lg mb-3">

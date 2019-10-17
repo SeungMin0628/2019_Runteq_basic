@@ -17,7 +17,7 @@
                 </ul>
               </div>
             </div>
-            <%= simple_format(@board.body, class: 'mb-0') %>
+            <%= simple_format(h(@board.body), class: 'mb-0').html_safe %>
           </div>
         </article>
       </div>

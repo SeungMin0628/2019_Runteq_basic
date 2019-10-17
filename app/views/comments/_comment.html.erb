@@ -7,7 +7,7 @@
     <%= 
       content_tag(
         :div,
-        simple_format(comment.body),
+        simple_format(h(comment.body)).html_safe,
         id: "js-comment-#{comment.id}"
       )
     %>

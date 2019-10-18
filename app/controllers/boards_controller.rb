@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+  before_action :find_board, only: %i[edit update destroy]
+
   def index
     @boards = Board.includes(:user).recent.search(params[:search]).page(params[:page])
   end
@@ -30,7 +32,26 @@ class BoardsController < ApplicationController
     @comments = @board.comments.exists? ? @board.comments.includes(:user) : nil
   end
 
+  def edit; end
+
+  def update
+    if @board.update(board_params)
+      redirect_to @board, success: t('flash.success.boards.update')
+    else
+      flash.now[:danger] = t('flash.danger.boards.update')
+      render :edit
+    end
+  end
+
+  def destroy
+    @board.destroy
+    redirect_to boards_path, success: t('flash.success.boards.delete')
+  end
+
   private
+  def find_board
+    @board = current_user.boards.find(params[:id])
+  end
 
   def board_params
     params.require(:board).permit(

@@ -11,6 +11,8 @@ en:
 
       boards:
         create: 'Your board is created successfully.'
+        update: 'Your board is updated successfully.'
+        delete: 'Your board is deleted successfully.'
 
       comments:
         create: 'Your comment is created successfully.'
@@ -25,6 +27,7 @@ en:
 
       boards:
         create: 'Submit failed. Please check again.'
+        update: 'Update failed. Please check again.'
 
       comments:
         create: 'Post failed. Please check your comment again.'

@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def render_404(exception = nil)
-    logger.info "Rendering 404 with exception: #{exception.message}" if e
+    logger.info "Rendering 404 with exception: #{exception.message}" if exception
 
     render :file => "#{Rails.root}/public/404.html", status: 404
   end

@@ -21,6 +21,7 @@ en:
       login_link: 'Already have an account?'
   boards:
     index:
+      title: 'Board list'
       no_data: "Oops! We couldn't find anything."
     new:
       title: 'New board'

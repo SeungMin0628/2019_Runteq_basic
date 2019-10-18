@@ -28,6 +28,7 @@ ja:
       login_link: 'ログインページへ'
   boards:
     index:
+      title: '掲示板一覧'
       no_data: "掲示板がありません"
     new:
       title: '掲示板作成'

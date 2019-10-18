@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RunteqNormal</title>
+    <title>
+      <%= if content_for?(:title) then "#{yield :title} | " end %>
+      RUNTEQ NORMAL APP
+    </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

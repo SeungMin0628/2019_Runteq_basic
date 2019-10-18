@@ -8,9 +8,6 @@ ja:
       truncate: "..."
   shared:
     bookmark_index: 'ブックマーク一覧'
-    board: '掲示板'
-    board_index: '掲示板一覧'
-    board_new: '掲示板作成'
     login: 'ログイン'
     logout: 'ログアウト'
     profile: 'プロフィール'
@@ -28,6 +25,7 @@ ja:
       login_link: 'ログインページへ'
   boards:
     index:
+      title: '掲示板一覧'
       no_data: "掲示板がありません"
     new:
       title: '掲示板作成'

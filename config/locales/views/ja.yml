@@ -16,6 +16,8 @@ ja:
     profile: 'プロフィール'
     search_keyword: '検索ワード'
     search: '検索'
+    cancel: 'キャンセル'
+    update: '更新'
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'
@@ -30,3 +32,11 @@ ja:
     new:
       title: '掲示板作成'
       submit: '作成'
+    show:
+      title: '掲示板詳細'
+  comments:
+    index:
+      no_data: 'コメントがありません。'
+    new:
+      body_placeholder: 'コメントを入力してください。'
+      submit: '投稿'

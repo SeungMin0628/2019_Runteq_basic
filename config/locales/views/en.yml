@@ -9,6 +9,8 @@ en:
     profile: 'Profile'
     search_keyword: 'input keyword...'
     search: 'Search'
+    cancel: 'Cancel'
+    update: 'Update'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'
@@ -23,3 +25,11 @@ en:
     new:
       title: 'New board'
       submit: 'Submit new board'
+    show:
+      title: 'Show board'
+  comments:
+    index:
+      no_data: 'There are no comments yet.'
+    new:
+      body_placeholder: 'Input comment...'
+      submit: 'Post your comment'

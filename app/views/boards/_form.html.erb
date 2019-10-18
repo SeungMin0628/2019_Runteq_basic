@@ -22,7 +22,7 @@
     <%= f.hidden_field :board_image_cache %>
 
     <%# preview of uploaded image %>
-    <%= image_tag image_url(f.object.board_image), id: 'js-board_image_prev', width: '100px', height: '100px', class: 'img-thumbnail' %>
+    <%= image_tag f.object.board_image.url, id: 'js-board_image_prev', width: '100px', height: '100px', class: 'img-thumbnail' %>
   </div>
   <div class="actions">
     <%= f.submit t('boards.new.submit'), class: 'btn btn-primary', data: { disable_with: t('boards.new.submit') } %>

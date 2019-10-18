@@ -1,0 +1,41 @@
+<tr id="<%= "comment-#{comment.id}" %>">
+  <td class="comment-width">
+    <%= image_tag 'sample.jpg', width: 50, height: 50, class: 'rounded-circle' %>
+  </td>
+  <td>
+    <%= content_tag(:h3, comment.user.decorate.full_name, class: 'small') %>
+    <%= 
+      content_tag(
+        :div,
+        simple_format(h(comment.body)).html_safe,
+        id: "js-comment-#{comment.id}"
+      )
+    %>
+    <% if comment.owned_by? current_user %>
+    <%# Only writer, show edit form %>
+      <div class="d-none">
+        <textarea class="form-control mb-1"><%= comment.body %></textarea>
+        <button class='btn btn-light'><%= t('shared.cancel') %></button>
+        <button class='btn btn-success'><%= t('shared.update') %></button>
+      </div>
+    <% end %>
+  </td>
+
+  <td class="action">
+    <ul class="list-inline justify-content-center comment-float-right">
+      <% if comment.owned_by? current_user %>
+      <%# Only writer, show edit and delete action button %>
+        <li class="list-inline-item">
+          <a href="#">
+            <i class="fa fa-edit"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">
+            <i class="fa fa-trash"></i>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </td>
+</tr>

@@ -1,9 +1,6 @@
 en:
   shared:
     bookmark_index: 'Bookmark list'
-    board: 'Board'
-    board_index: 'Board list'
-    board_new: 'Write board'
     login: 'Log in'
     logout: 'Log out'
     profile: 'Profile'

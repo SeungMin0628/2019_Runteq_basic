@@ -7,4 +7,13 @@ module ApplicationHelper
     else "alert-#{level}"
     end
   end
+
+  # ウェブページのタイトルを出力する
+  def page_title(title)
+    if title.blank? 
+      'RUNTEQ NORMAL APP'
+    else
+      "#{title} | RUNTEQ NORMAL APP"
+    end
+  end
 end

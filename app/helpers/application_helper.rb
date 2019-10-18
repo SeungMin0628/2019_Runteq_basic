@@ -10,7 +10,7 @@ module ApplicationHelper
 
   # ウェブページのタイトルを出力する
   def page_title(title)
-    if title.blank? 
+    if title.blank?
       'RUNTEQ NORMAL APP'
     else
       "#{title} | RUNTEQ NORMAL APP"

@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
   end
 
-  def render_404(e = nil)
-    logger.info "Rendering 404 with exception: #{e.message}" if e
-    
-    render :file => "#{Rails.root}/public/404.html",  :status => 404
+  def render_404(exception = nil)
+    logger.info "Rendering 404 with exception: #{exception.message}" if e
+
+    render :file => "#{Rails.root}/public/404.html", status: 404
   end
 end

@@ -19,8 +19,4 @@ class Board < ApplicationRecord
   def owned_by?(user)
     user_id == user&.id
   end
-
-  def bookmarked_by?(user)
-    user.bookmarked?(self)
-  end
 end

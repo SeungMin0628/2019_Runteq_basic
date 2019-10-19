@@ -16,6 +16,10 @@ ja:
       comments:
         create: 'コメントの作成が完了しました'
 
+      bookmarks:
+        create: 'ブックマークしました'
+        delete: 'ブックマークを外しました'
+
     danger:
       user_sessions:
         create: 'ログインに失敗しました'

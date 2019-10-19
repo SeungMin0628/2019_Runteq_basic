@@ -3,6 +3,14 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.includes(:user).recent.search(params[:search]).page(params[:page])
+    @search_path = boards_path
+  end
+
+  def bookmarks
+    @boards = current_user.boards.recent.search(params[:search]).page(params[:page])
+    @search_path = bookmarks_boards_path
+
+    render :index
   end
 
   def new
@@ -50,7 +58,7 @@ class BoardsController < ApplicationController
 
   private
   def find_board
-    @board = current_user.boards.find(params[:id])
+    @board = Board.find_by!(id: params[:id], user_id: current_user)
   end
 
   def board_params
@@ -59,6 +67,8 @@ class BoardsController < ApplicationController
       :body,
       :board_image,
       :board_image_cache
+    ).merge(
+      user_id: current_user.id
     )
   end
 end

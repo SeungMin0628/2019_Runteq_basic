@@ -12,6 +12,11 @@ class User < ApplicationRecord
   validates :last_name, :first_name, presence: true
 
   # Relations
-  has_many :boards, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :boards, dependent: :destroy, through: :bookmarks
   has_many :comments, dependent: :destroy
+
+  def bookmarked?(board)
+    bookmarks.find_by(board_id: board.id)
+  end
 end

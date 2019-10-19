@@ -15,17 +15,7 @@
                 <ul class="list-inline">
                   <li class='list-inline-item'><%= "by #{@board.user.decorate.full_name}" %></li>
                   <li class='list-inline-item'><%= l(@board.created_at, format: :long) %></li>
-                  <% if @board.owned_by? current_user %>
-                  <%# Only writer, show edit and delete action button %>
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <%= link_to(content_tag(:i, nil, class: 'fa fa-edit'), edit_board_path(id: @board.id)) %>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <%= link_to(content_tag(:i, nil, class: 'fa fa-trash'), board_path(id: @board.id), method: :delete) %>
-                    </li>
-                  <% end %>
+                  <%= render 'boards/control_area', board: @board %>
                 </ul>
               </div>
             </div>

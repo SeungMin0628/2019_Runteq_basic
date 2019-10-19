@@ -24,6 +24,7 @@ user = User.first
 
 10.times { |count|
   user.boards.create!(
+    user_id: user.id,
     title: Faker::Book.unique.title,
     body: Faker::Source.hello_world
   )

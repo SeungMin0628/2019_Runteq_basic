@@ -1,0 +1,9 @@
+<%= 
+  link_to(
+    content_tag(:i, '', class: 'far fa-star'),
+    bookmark_path(id: bookmark.id),
+    method: :delete,
+    id: "btn-bookmark-#{board.id}",
+    rel: 'nofollow'
+    ) 
+%>

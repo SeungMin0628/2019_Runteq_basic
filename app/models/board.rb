@@ -13,4 +13,9 @@ class Board < ApplicationRecord
   # Scopes
   scope :search, ->(keyword) { where(['title LIKE ?', "%#{keyword}%"]) }
   scope :recent, -> { order(created_at: :desc) }
+
+  # Instance method
+  def owned_by?(user)
+    user_id == user&.id
+  end
 end

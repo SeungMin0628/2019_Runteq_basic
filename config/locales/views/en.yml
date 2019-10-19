@@ -25,6 +25,8 @@ en:
       submit: 'Submit new board'
     show:
       title: 'Show board'
+    edit:
+      title: 'Edit board'
   comments:
     index:
       no_data: 'There are no comments yet.'

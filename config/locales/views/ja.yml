@@ -32,6 +32,8 @@ ja:
       submit: '作成'
     show:
       title: '掲示板詳細'
+    edit:
+      title: '掲示板編集'
   comments:
     index:
       no_data: 'コメントがありません。'

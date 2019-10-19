@@ -10,6 +10,8 @@ ja:
 
       boards:
         create: '掲示板の作成が完了しました'
+        update: '掲示板を更新しました'
+        delete: '掲示板を削除しました'
 
       comments:
         create: 'コメントの作成が完了しました'
@@ -24,6 +26,7 @@ ja:
 
       boards:
         create: '掲示板を作成できませんでした'
+        update: '掲示板を更新できませんでした'
 
       comments:
         create: 'コメントの作成に失敗しました。コメントの内容を確認してください。'

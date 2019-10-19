@@ -20,7 +20,7 @@ class Board < ApplicationRecord
     user_id == user&.id
   end
 
-  def is_bookmarked_by?(user)
+  def bookmarked_by?(user)
     user.bookmarked?(self)
   end
 end

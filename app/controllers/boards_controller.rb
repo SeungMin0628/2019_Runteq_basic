@@ -6,7 +6,7 @@ class BoardsController < ApplicationController
   end
 
   def bookmarks
-    @boards = current_user.boards.recent.search(params[:search]).page(params[:page])
+    @boards = current_user.bookmarked_boards.recent.search(params[:search]).page(params[:page])
   end
 
   def new
@@ -54,7 +54,7 @@ class BoardsController < ApplicationController
 
   private
   def find_board
-    @board = Board.find_by!(id: params[:id], user_id: current_user)
+    @board = current_user.boards.find(params[:id])
   end
 
   def board_params
@@ -63,8 +63,6 @@ class BoardsController < ApplicationController
       :body,
       :board_image,
       :board_image_cache
-    ).merge(
-      user_id: current_user.id
     )
   end
 end

@@ -1,9 +1,9 @@
-<%= content_for :title, t('boards.index.title') %>
+<%= content_for :title, t('bookmarks.index.title') %>
 <div class="container pt-3">
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <%# 検索フォーム %>
-      <%= form_with url: boards_path, method: :get, local: true do |f| %>
+      <%= form_with url: bookmarks_boards_path, method: :get, local: true do |f| %>
         <div class="input-group mb-3">
           <%= 
             # I18n 機能を維持するための秘密の値。これがないと、検索したらI18nがなくなる

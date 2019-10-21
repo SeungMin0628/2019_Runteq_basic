@@ -3,14 +3,10 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.includes(:user).recent.search(params[:search]).page(params[:page])
-    @search_path = boards_path
   end
 
   def bookmarks
     @boards = current_user.boards.recent.search(params[:search]).page(params[:page])
-    @search_path = bookmarks_boards_path
-
-    render :index
   end
 
   def new

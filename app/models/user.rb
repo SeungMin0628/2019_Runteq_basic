@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :bookmarked_boards, through: :bookmarks, class_name: :Board
   has_many :comments, dependent: :destroy
 
-  def bookmarked?(board)
+  def bookmark_for(board)
     bookmarks.find_by(board_id: board.id)
   end
 end

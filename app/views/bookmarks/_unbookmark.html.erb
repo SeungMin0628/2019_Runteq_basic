@@ -3,6 +3,7 @@
     content_tag(:i, '', class: 'far fa-star'),
     bookmark_path(id: bookmark.id),
     method: :delete,
+    remote: true,
     id: "btn-bookmark-#{board.id}",
     rel: 'nofollow'
     ) 

@@ -1,0 +1,7 @@
+<% if (bookmark = current_user.bookmarked? board) %>
+  <%# ブックマークされている場合、　解除ボタンを付ける %>
+  <%= render 'bookmarks/unbookmark', board: board, bookmark: bookmark %>
+<% else %>
+  <%# ブックマークされていない場合、　ブックマークボタンを付ける %>
+  <%= render 'bookmarks/bookmark', board: board %>
+<% end %>

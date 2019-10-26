@@ -1,0 +1,45 @@
+<%= content_for :title, t('bookmarks.index.title') %>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <%# 検索フォーム %>
+      <%= form_with url: bookmarks_boards_path, method: :get, local: true do |f| %>
+        <div class="input-group mb-3">
+          <%= 
+            # I18n 機能を維持するための秘密の値。これがないと、検索したらI18nがなくなる
+            # TODO : 検索機能をつけるごとにこれを入れるのもあまり良い対策ではないと思う。。。他の対策を探そう。
+            f.hidden_field :locale, value: I18n.locale 
+          %>
+          <%= f.text_field :search, placeholder: t('shared.search_keyword'), class: 'form-control', type: 'search' %>
+          <div class="input-group-append">
+            <%= f.submit t('shared.search'), class: 'btn btn-primary',  data: {disable_with: t('shared.search')}, name: 'commit' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%# 掲示板一覧 %>
+  <div class="row">
+    <div class="col-12">
+      <!-- boards -->
+      <div class="row">
+        <% if @boards.exists? %>
+          <%= render @boards %>                    
+        <% else %>
+          <div class="col-sm col-md col-lg mb-3">
+            <div class="card">
+              <div class='card-body'>
+                <%= content_tag(:span, t('boards.index.no_data'), class: 'text-muted') %>
+              </div>
+            </div>
+          </div>    
+        <% end %> 
+      </div>
+      <!-- pagination -->
+      <div class="row d-flex justify-content-center">
+        <%= paginate @boards %>  
+      </div>
+    </div>
+  </div>
+</div>

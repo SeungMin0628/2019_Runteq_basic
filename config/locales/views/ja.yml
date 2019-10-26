@@ -7,7 +7,6 @@ ja:
       next: "次 &rsaquo;"
       truncate: "..."
   shared:
-    bookmark_index: 'ブックマーク一覧'
     login: 'ログイン'
     logout: 'ログアウト'
     profile: 'プロフィール'
@@ -40,3 +39,6 @@ ja:
     new:
       body_placeholder: 'コメントを入力してください。'
       submit: '投稿'
+  bookmarks:
+    index:
+      title: 'ブックマーク一覧'

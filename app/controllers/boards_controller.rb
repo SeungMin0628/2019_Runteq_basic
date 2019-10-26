@@ -5,6 +5,10 @@ class BoardsController < ApplicationController
     @boards = Board.includes(:user).recent.search(params[:search]).page(params[:page])
   end
 
+  def bookmarks
+    @boards = current_user.bookmarked_boards.recent.search(params[:search]).page(params[:page])
+  end
+
   def new
     @board = Board.new
   end

@@ -17,6 +17,10 @@ en:
       comments:
         create: 'Your comment is created successfully.'
 
+      bookmarks:
+        create: 'Make a bookmark done.'
+        delete: 'Delete a bookmark done.'
+
     danger:
       user_sessions:
         create: 'Log in is failed. Please check your email address or password.'

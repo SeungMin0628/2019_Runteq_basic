@@ -1,6 +1,5 @@
 en:
   shared:
-    bookmark_index: 'Bookmark list'
     login: 'Log in'
     logout: 'Log out'
     profile: 'Profile'
@@ -33,3 +32,6 @@ en:
     new:
       body_placeholder: 'Input comment...'
       submit: 'Post your comment'
+  bookmarks:
+    index:
+      title: 'Bookmark list'

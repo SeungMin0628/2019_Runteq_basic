@@ -1,0 +1,16 @@
+<% if board.owned_by? current_user %>
+  <%# Only writer, show edit and delete action button %>
+  <li class="list-inline-item">
+    <a href="#">
+      <%= link_to(content_tag(:i, nil, class: 'fa fa-edit'), edit_board_path(id: board.id)) %>
+    </a>
+  </li>
+  <li class="list-inline-item">
+    <%= link_to(content_tag(:i, nil, class: 'fa fa-trash'), board_path(id: board.id), method: :delete) %>
+  </li>
+<% else %>
+  <%# If user is not writer, then show bookmark area %>
+  <li class="list-inline-item">
+    <%= render "bookmarks/bookmark_area", board: board %>
+  </li>
+<% end %>

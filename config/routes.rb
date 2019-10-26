@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :comments, shallow: true, only: %i[create]
     resources :bookmarks, shallow: true, only: %i[create destroy]
     collection do
-      get 'bookmarks'
+      get 'bookmarks', to: 'bookmarks#index'
     end
   end
 end

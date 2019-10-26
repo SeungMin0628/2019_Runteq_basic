@@ -1,4 +1,4 @@
-<% if (bookmark = current_user.bookmarked? board) %>
+<% if (bookmark = current_user.bookmark_for board) %>
   <%# ブックマークされている場合、　解除ボタンを付ける %>
   <%= render 'bookmarks/unbookmark', board: board, bookmark: bookmark %>
 <% else %>

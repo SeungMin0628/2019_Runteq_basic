@@ -12,12 +12,6 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.new(board_params)
 
-    # Image cache
-    if !@board.board_image.present? && @board.board_image_cache.present?
-      @board.board_image.retrieve_from_cache! @board.board_image_cache
-    end
-    @board.board_image_cache = @board.board_image.cache_name
-
     if @board.save
       redirect_to boards_path, success: t('flash.success.boards.create')
     else

@@ -3,8 +3,6 @@
 
   <%# delete invalidation style %>
   $('#comment-<%= @comment.id %>-body').removeClass('is-invalid');
-  $('#js-comment-<%= @comment.id %>-body-validation').removeClass('invalid-feedback');
-  $('#js-comment-<%= @comment.id %>-body-validation').text('');
 
   <%# show updated contents %>
   $('#js-comment-edit-form-<%= @comment.id %>').addClass('d-none');
@@ -13,8 +11,5 @@
   $('#comment-<%= @comment.id %>').addClass('comment-inputted border-success');
 <% else %>
   <%# failed updating comment %>
-  $('#comment-<%= @comment.id %>-body').removeClass('is-valid');
   $('#comment-<%= @comment.id %>-body').addClass('is-invalid');
-  $('#js-comment-<%= @comment.id %>-body-validation').addClass('invalid-feedback');
-  $('#js-comment-<%= @comment.id %>-body-validation').text("<%= t('flash.danger.comments.update') %>");
 <% end %>

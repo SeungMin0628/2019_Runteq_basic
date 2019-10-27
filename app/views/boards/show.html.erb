@@ -32,7 +32,7 @@
           <%= f.label :body %>
           <div class="input-group mb-3">
             <%= f.text_area :body, row: 4, placeholder: t('comments.new.body_placeholder'), class: 'form-control' %>
-            <div id="js-comment-body-validation"></div>
+            <div id="js-comment-body-validation" class="invalid-feedback"><%= t('flash.danger.comments.create') %></div>
           </div>
           <%= f.submit t('comments.new.submit'), class: 'btn btn-primary' %>
         <% end %>

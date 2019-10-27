@@ -17,7 +17,14 @@
         <%= form_with(model: comment, url: comment_path(id: comment.id), method: :put) do |f| %>
           <div class='input-group'>
             <%= f.text_area :body, id: "comment-#{comment.id}-body", value: comment.body, class: 'form-control mb-1', placeholder: t('comments.new.body_placeholder') %>
-            <%= content_tag(:div, '', id: "js-comment-#{comment.id}-body-validation") %>
+            <%= 
+              content_tag(
+                :div, 
+                t('flash.danger.comments.update'), 
+                id: "js-comment-#{comment.id}-body-validation",
+                class: 'invalid-feedback'
+              ) 
+            %>
           </div>
           <button type="button" name="js-comment-edit-cancel" class='btn btn-light' data-comment-id="<%= comment.id %>"><%= t('shared.cancel') %></button>
           <%= f.submit t('shared.update'), class: 'btn btn-success' %>

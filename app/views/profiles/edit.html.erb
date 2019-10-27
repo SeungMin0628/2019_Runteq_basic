@@ -1,0 +1,51 @@
+<%= content_for :title, t('profile.edit.title') %>
+<div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('profile.edit.title') %></h1>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <%= form_with(model: current_user, url: profile_path, local: true) do |f| %>
+        <!-- if exists error: render error messages -->
+        <%= render 'layouts/error_messages', model: f.object %>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :avatar %>
+          <%= 
+            f.file_field( 
+              :avatar,
+              class: 'form-control-file mb-2',
+              accept: 'image/jpg, image/jpeg, image/png, image/gif',
+            )
+          %>
+          <%= f.hidden_field :avatar_cache %>
+
+          <%# preview of uploaded image %>
+          <%= image_tag f.object.avatar.url, id: 'js-avatar_prev', width: '100px', height: '100px', class: 'img-thumbnail rounded-circle avatar avatar-big' %>
+        </div>
+        
+         <div class="actions">
+          <%= f.submit t('shared.update'), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

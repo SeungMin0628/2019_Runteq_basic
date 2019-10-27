@@ -1,0 +1,15 @@
+<% if @status %>
+  <%# save comment successfully %>
+  $('#comment_body').removeClass('is-invalid');
+  $('#comment_body').val('');
+  $('#js-comment-body-validation').removeClass('invalid-feedback');
+  $('#js-comment-body-validation').text('');
+  $('#js-table-comment').prepend(`<%= render @comment %>`);
+  $('#comment-<%= @comment.id %>').addClass('comment-inputted border-primary');
+<% else %>
+  <%# failed saving comment %>
+  $('#comment_body').removeClass('is-valid');
+  $('#comment_body').addClass('is-invalid');
+  $('#js-comment-body-validation').addClass('invalid-feedback');
+  $('#js-comment-body-validation').text('<%= @message %>');
+<% end %>

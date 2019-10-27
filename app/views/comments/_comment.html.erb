@@ -13,10 +13,15 @@
     %>
     <% if comment.owned_by? current_user %>
     <%# Only writer, show edit form %>
-      <div class="d-none">
-        <textarea class="form-control mb-1"><%= comment.body %></textarea>
-        <button class='btn btn-light'><%= t('shared.cancel') %></button>
-        <button class='btn btn-success'><%= t('shared.update') %></button>
+      <div class="d-none" id="js-comment-edit-form-<%= comment.id %>">
+        <%= form_with(model: comment, url: comment_path(id: comment.id), method: :put) do |f| %>
+          <div class='input-group'>
+            <%= f.text_area :body, id: "comment-#{comment.id}-body", value: comment.body, class: 'form-control mb-1', placeholder: t('comments.new.body_placeholder') %>
+            <%= content_tag(:div, '', id: "js-comment-#{comment.id}-body-validation") %>
+          </div>
+          <button type="button" name="js-comment-edit-cancel" class='btn btn-light' data-comment-id="<%= comment.id %>"><%= t('shared.cancel') %></button>
+          <%= f.submit t('shared.update'), class: 'btn btn-success' %>
+        <% end %>
       </div>
     <% end %>
   </td>
@@ -26,16 +31,58 @@
       <% if comment.owned_by? current_user %>
       <%# Only writer, show edit and delete action button %>
         <li class="list-inline-item">
-          <a href="#">
-            <i class="fa fa-edit"></i>
-          </a>
+          <i name="js-comment-edit" class="fa fa-edit btn-link cursor-pointer" data-comment-id="<%= comment.id %>"></i>
         </li>
         <li class="list-inline-item">
-          <a href="#">
-            <i class="fa fa-trash"></i>
-          </a>
+          <!-- <i class="fa fa-trash btn-link cursor-pointer" data-toggle="modal" data-target="#delete-comment-confirm-modal"></i> -->
+          <%=
+              link_to(
+                content_tag(:i, '', class: 'fa fa-trash btn-link cursor-pointer'),
+                comment_path(id: comment.id),
+                method: :delete,
+                remote: true,
+              )
+            %>
         </li>
       <% end %>
     </ul>
+
+    <%# 
+      TODO : モーダルで削除ボタンをクリックした後、ページのグレイアウトが解除されない問題がある → デバッグする前は下記のコードを非活性する
+
+      destroy.js.erbのアクションを消すと上記の問題が解決する。多分BootstrapのアクションとリスポンスのJSアクションがクラッシュするかも知らない
+    %>
+    <% if false %>
+    <!-- Delete cofirm modal -->
+    <div class="modal fade" id="delete-comment-confirm-modal" tabindex="-1" role="dialog" aria-labelledby="delete-comment-confirm-modal-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="delete-comment-confirm-modal-label"><%= t('comments.delete.title') %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= t('comments.delete.confirm_message') %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t('shared.cancel') %></button>
+            <%=
+              link_to(
+                t('shared.delete'),
+                comment_path(id: comment.id),
+                method: :delete,
+                remote: true,
+                class: 'btn btn-danger',
+                data: { dismiss: "modal" },
+              )
+            %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </td>
 </tr>

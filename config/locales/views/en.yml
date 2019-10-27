@@ -7,6 +7,7 @@ en:
     search: 'Search'
     cancel: 'Cancel'
     update: 'Update'
+    delete: 'Delete'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'
@@ -32,6 +33,9 @@ en:
     new:
       body_placeholder: 'Input comment...'
       submit: 'Post your comment'
+    delete:
+      title: 'Delete comment'
+      confirm_message: 'Are you sure to delete this comment?'
   bookmarks:
     index:
       title: 'Bookmark list'

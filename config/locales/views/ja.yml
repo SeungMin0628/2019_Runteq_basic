@@ -14,6 +14,7 @@ ja:
     search: '検索'
     cancel: 'キャンセル'
     update: '更新'
+    delete: '削除'
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'
@@ -39,6 +40,9 @@ ja:
     new:
       body_placeholder: 'コメントを入力してください。'
       submit: '投稿'
+    delete:
+      title: 'コメント削除'
+      confirm_message: '本当にこのコメントを削除しますか?'
   bookmarks:
     index:
       title: 'ブックマーク一覧'

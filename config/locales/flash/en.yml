@@ -35,3 +35,4 @@ en:
 
       comments:
         create: 'Post failed. Please check your comment again.'
+        create: 'Update failed. Please check your comment again.'

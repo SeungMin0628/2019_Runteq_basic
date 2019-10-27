@@ -11,8 +11,6 @@ class CommentsController < ApplicationController
   end
 
   def update
-    # binding.pry
-
     if !(@status = @comment.update(comment_params))
       @message = t('flash.danger.comments.update')
     end

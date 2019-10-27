@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    if params.has_key?(:board_id)
+    if params.key?(:board_id)
       params.require(:comment).permit(:body).merge(board_id: params[:board_id])
     else
       params.require(:comment).permit(:body)

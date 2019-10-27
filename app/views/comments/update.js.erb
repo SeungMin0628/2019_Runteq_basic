@@ -16,5 +16,5 @@
   $('#comment-<%= @comment.id %>-body').removeClass('is-valid');
   $('#comment-<%= @comment.id %>-body').addClass('is-invalid');
   $('#js-comment-<%= @comment.id %>-body-validation').addClass('invalid-feedback');
-  $('#js-comment-<%= @comment.id %>-body-validation').text('<%= @message %>');
+  $('#js-comment-<%= @comment.id %>-body-validation').text("<%= t('flash.danger.comments.update') %>");
 <% end %>

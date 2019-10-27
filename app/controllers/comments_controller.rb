@@ -3,17 +3,11 @@ class CommentsController < ApplicationController
   after_action :render_ajax, only: %i[create update destroy]
 
   def create
-    @comment = current_user.comments.build(comment_params)
-
-    if !(@status = @comment.save)
-      @message = t('flash.danger.comments.create')
-    end
+    @comment = current_user.comments.create(comment_params)
   end
 
   def update
-    if !(@status = @comment.update(comment_params))
-      @message = t('flash.danger.comments.update')
-    end
+    @status = @comment.update(comment_params)
   end
 
   def destroy

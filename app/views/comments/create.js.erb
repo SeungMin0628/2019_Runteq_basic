@@ -1,4 +1,4 @@
-<% if @status %>
+<% if @comment.valid? %>
   <%# save comment successfully %>
   $('#comment_body').removeClass('is-invalid');
   $('#comment_body').val('');
@@ -11,5 +11,5 @@
   $('#comment_body').removeClass('is-valid');
   $('#comment_body').addClass('is-invalid');
   $('#js-comment-body-validation').addClass('invalid-feedback');
-  $('#js-comment-body-validation').text('<%= @message %>');
+  $('#js-comment-body-validation').text("<%= t('flash.danger.comments.create') %>");
 <% end %>

@@ -1,10 +1,14 @@
 class ProfilesController < ApplicationController
   def show; end
 
-  def edit; end
+  def edit
+    @user = current_user
+  end
 
   def update
-    if current_user.update(profile_params)
+    @user = User.find(current_user.id)
+    
+    if @user.update(profile_params)
       redirect_to profile_path, success: t('flash.success.profiles.update')
     else
       flash.now[:danger] = t('flash.danger.profiles.update')

@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    
+
     if @user.update(profile_params)
       redirect_to profile_path, success: t('flash.success.profiles.update')
     else

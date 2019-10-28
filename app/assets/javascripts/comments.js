@@ -10,14 +10,14 @@ $(document).ready(() => {
   */
 
   // when click edit button, then open edit form 
-  $('[name="js-comment-edit"]').click((event) => {
+  $(document).on('click', '[name="js-comment-edit"]', (event) => {
     let commentId = $(event.target).data('commentId');
     $(`#js-comment-${commentId}`).addClass('d-none');
     $(`#js-comment-edit-form-${commentId}`).removeClass('d-none');;
   });
 
   // when click cancel button, then close edit form 
-  $('[name="js-comment-edit-cancel"]').click((event) => {
+  $(document).on('click', '[name="js-comment-edit-cancel"]', (event) => {
     let commentId = $(event.target).data('commentId');
     $(`#js-comment-${commentId}`).removeClass('d-none');
     $(`#js-comment-edit-form-${commentId}`).addClass('d-none');;

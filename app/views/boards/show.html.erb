@@ -1,53 +1,84 @@
 <%= content_for :title, @board.title %>
 <div class="container pt-5">
-    <div class="row mb-3">
-      <div class="col-lg-8 offset-lg-2">
-        <%= content_tag(:h1, t('boards.show.title')) %>
-        <%# 掲示板内容 %>
-        <article class="card">
-          <div class="card-body">
-            <div class='row'>
-              <div class='col-md-3'>
-                <%= image_tag(@board.board_image.url, width: 300, height: 200, class: 'card-img-top img-fluid') %>
-              </div>
-              <div class='col-md-9'>
-                <h3 class="d-inline"><%= @board.title %></h3>
-                <ul class="list-inline">
-                  <li class='list-inline-item'><%= "by #{@board.user.decorate.full_name}" %></li>
-                  <li class='list-inline-item'><%= l(@board.created_at, format: :long) %></li>
-                  <%= render 'boards/control_area', board: @board %>
-                </ul>
-              </div>
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <%= content_tag(:h1, t('boards.show.title')) %>
+      <%# 掲示板内容 %>
+      <article class="card">
+        <div class="card-body">
+          <div class='row'>
+            <div class='col-md-3'>
+              <%= image_tag(@board.board_image.url, width: 300, height: 200, class: 'card-img-top img-fluid') %>
             </div>
-            <%= simple_format(h(@board.body), class: 'mb-0').html_safe %>
+            <div class='col-md-9'>
+              <h3 class="d-inline"><%= @board.title %></h3>
+              <ul class="list-inline">
+                <li class='list-inline-item'><%= "by #{@board.user.decorate.full_name}" %></li>
+                <li class='list-inline-item'><%= l(@board.created_at, format: :long) %></li>
+                <%= render 'boards/control_area', board: @board %>
+              </ul>
+            </div>
           </div>
-        </article>
-      </div>
+          <%= simple_format(h(@board.body), class: 'mb-0').html_safe %>
+        </div>
+      </article>
     </div>
-  
-    <%# コメントフォーム %>
-    <div class="row mb-3">
-      <div class="col-lg-8 offset-lg-2">
-        <%= form_with(model: @comment, url: board_comments_path(board_id: @board.id), method: :post) do |f| %>
-          <%= f.label :body %>
-          <div class="input-group mb-3">
-            <%= f.text_area :body, row: 4, placeholder: t('comments.new.body_placeholder'), class: 'form-control' %>
-            <div id="js-comment-body-validation" class="invalid-feedback"><%= t('flash.danger.comments.create') %></div>
-          </div>
-          <%= f.submit t('comments.new.submit'), class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+  </div>
+
+  <%# コメントフォーム %>
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <%= form_with(model: @comment, url: board_comments_path(board_id: @board.id), method: :post) do |f| %>
+        <%= f.label :body %>
+        <div class="input-group mb-3">
+          <%= f.text_area :body, row: 4, placeholder: t('comments.new.body_placeholder'), class: 'form-control' %>
+          <div id="js-comment-body-validation" class="invalid-feedback"><%= t('flash.danger.comments.create') %></div>
+        </div>
+        <%= f.submit t('comments.new.submit'), class: 'btn btn-primary' %>
+      <% end %>
     </div>
-  
-  
-    <%# コメントエリア %>
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <% if @comments %>
-          <%= render partial: 'comments/table', comments: @comments %>
-        <% else %>
-            <%= render partial: 'comments/empty' %>
-        <% end %>
+  </div>
+
+
+  <%# コメントエリア %>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <% if @comments %>
+        <%= render partial: 'comments/table', comments: @comments %>
+      <% else %>
+          <%= render partial: 'comments/empty' %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Delete cofirm modal -->
+  <div class="modal fade" id="delete-comment-confirm-modal" tabindex="-1" role="dialog" aria-labelledby="delete-comment-confirm-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="delete-comment-confirm-modal-label"><%= t('comments.delete.title') %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= t('comments.delete.confirm_message') %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t('shared.cancel') %></button>
+          <%=
+            link_to(
+              t('shared.delete'),
+              "#",
+              method: :delete,
+              remote: true,
+              class: 'btn btn-danger',
+              id: "js-delete-button",
+              data: { dismiss: "modal" }
+            )
+          %>
+        </div>
       </div>
     </div>
   </div>
+</div>

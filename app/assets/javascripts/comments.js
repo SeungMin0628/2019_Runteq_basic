@@ -3,11 +3,11 @@
 
 // for edit function 
 $(document).ready(() => {
-  /*
-    TODO : コメントを登録したばかりは編集ボタンをクリックしても反応がない。
-
-    ページをリロードすると利用できる
-  */
+  // add delete link, on delete button
+  $('#delete-comment-confirm-modal').on('show.bs.modal', function (e) {
+    const deleteUrl = e.relatedTarget.dataset.deleteUrl;
+    $("#js-delete-button").attr("href", deleteUrl);
+  });
 
   // when click edit button, then open edit form 
   $(document).on('click', '[name="js-comment-edit"]', (event) => {

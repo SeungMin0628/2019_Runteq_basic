@@ -20,6 +20,9 @@ ja:
         create: 'ブックマークしました'
         delete: 'ブックマークを外しました'
 
+      profiles:
+        update: 'プロフィールを更新しました'
+
     danger:
       user_sessions:
         create: 'ログインに失敗しました'
@@ -34,3 +37,6 @@ ja:
 
       comments:
         create: 'コメントの作成に失敗しました。コメントの内容を確認してください。'
+
+      profiles:
+        update: 'プロフィールの更新に失敗しました'

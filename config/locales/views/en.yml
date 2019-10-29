@@ -2,11 +2,11 @@ en:
   shared:
     login: 'Log in'
     logout: 'Log out'
-    profile: 'Profile'
     search_keyword: 'input keyword...'
     search: 'Search'
     cancel: 'Cancel'
     update: 'Update'
+    edit: 'Edit'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'
@@ -35,3 +35,8 @@ en:
   bookmarks:
     index:
       title: 'Bookmark list'
+  profile:
+    show:
+      title: 'Profile'
+    edit:
+      title: 'Edit profile'

@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       get 'bookmarks', to: 'bookmarks#index'
     end
   end
+
+  resource :profile, only: %i[show edit update]
 end

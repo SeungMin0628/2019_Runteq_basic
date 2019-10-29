@@ -1,1 +1,5 @@
 $('#comment-<%= @comment.id %>').remove();
+
+if(!$('#js-table-comment > tbody > tr').length) {
+  $('#js-table-comment').replaceWith(`<%= render partial: "comments/empty" %>`);
+}

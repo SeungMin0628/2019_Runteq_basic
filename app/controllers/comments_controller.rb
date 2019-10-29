@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_action :find_comemnt, only: %i[update destroy]
-  after_action :render_ajax, only: %i[create update destroy]
 
   def create
     @comment = current_user.comments.create(comment_params)
@@ -26,11 +25,5 @@ class CommentsController < ApplicationController
 
   def find_comemnt
     @comment = current_user.comments.find(params[:id])
-  end
-
-  def render_ajax
-    respond_to do |format|
-      format.js
-    end
   end
 end

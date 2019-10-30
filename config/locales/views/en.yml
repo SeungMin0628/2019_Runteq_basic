@@ -40,3 +40,9 @@ en:
       title: 'Profile'
     edit:
       title: 'Edit profile'
+  password_resets:
+    new:
+      title: 'Account recovery'
+      submit: 'Request reset password'
+    edit:
+      title: 'Reset password'

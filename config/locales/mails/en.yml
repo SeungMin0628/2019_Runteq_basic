@@ -1,0 +1,5 @@
+en:
+  mails:
+    password_resets:
+      create:
+        title: 'Reset password'

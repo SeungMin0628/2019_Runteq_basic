@@ -1,0 +1,31 @@
+<%= content_for :title, t('password_resets.edit.title')  %>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h3><%= t('password_resets.edit.title') %></h3>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <%= form_with(model: @user, url: password_reset_path(@token), method: :patch, local: true) do |f| %>
+        <!-- if exists error: render error messages -->
+        <%= render 'layouts/error_messages', model: f.object %>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
+        </div>
+
+        <div class="action">
+          <%= f.submit t('password_resets.edit.submit'), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

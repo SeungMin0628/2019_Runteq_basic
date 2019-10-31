@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'info@queueboard.com'
+  default from: Settings.mail[:from]
   layout 'mailer'
 end

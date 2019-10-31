@@ -55,6 +55,9 @@ gem 'kaminari', '~> 0.17.0'
 # User CarrierWave, solution for file uploads for Rails
 gem 'carrierwave', '~> 2.0'
 
+# config, Easiest way to add multi-environment yaml settings to Rails
+gem 'config'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

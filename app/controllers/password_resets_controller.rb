@@ -21,10 +21,7 @@ class PasswordResetsController < ApplicationController
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
 
-    if @user.blank?
-      not_authenticated
-      return
-    end
+    return not_authenticated if @user.blank?
   end
 
   # This action fires when the user has sent the reset password form.

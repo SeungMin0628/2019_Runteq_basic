@@ -9,7 +9,7 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by_email(params[:email])
 
     # This line sends an email to the user with instructions on how to reset their password (a url with a random token)
-    @user.deliver_reset_password_instructions! if !@user.blank?
+    @user.deliver_reset_password_instructions! unless @user.blank?
 
     # Tell the user instructions have been sent whether or not email was found.
     # This is to not leak information to attackers about which emails exist in the system.
@@ -32,10 +32,7 @@ class PasswordResetsController < ApplicationController
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
 
-    if @user.blank?
-      not_authenticated
-      return
-    end
+    return not_authenticated if @user.blank?
 
     # the next line makes the password confirmation validation work
     @user.password_confirmation = params[:user][:password_confirmation]

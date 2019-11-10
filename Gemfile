@@ -56,9 +56,9 @@ gem 'kaminari', '~> 0.17.0'
 gem 'carrierwave', '~> 2.0'
 
 # Rolify, Role management library with resource scoping
-gem "rolify"
+gem 'rolify'
 
-# Use ransack, Object-based searching. 
+# Use ransack, Object-based searching.
 gem 'ransack'
 
 group :development, :test do

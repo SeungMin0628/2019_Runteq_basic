@@ -11,14 +11,14 @@ class Admin::UsersController < Admin::AdminController
   def update
     if @user.update(user_params)
       # update role if role is changed
-      unless @user.has_role? (new_role = params[:user][:role].to_sym)
+      unless @user.has_role?(new_role = params[:user][:role].to_sym)
         @user.roles.destroy_all
         @user.add_role new_role
       end
 
-      redirect_to admin_users_path, success: t('flash.success.users.update');
+      redirect_to admin_users_path, success: t('flash.success.users.update')
     else
-      flash.now[:danger] = t('flash.danger.users.update');
+      flash.now[:danger] = t('flash.danger.users.update')
       render :edit
     end
   end
@@ -39,7 +39,7 @@ class Admin::UsersController < Admin::AdminController
       :first_name,
       :last_name,
       :avatar,
-      :avatar_cache,
+      :avatar_cache
     )
   end
 end

@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   # Scope
-  scope :id_desc, -> { order(id: :desc)}
+  scope :id_desc, -> { order(id: :desc) }
 
   def bookmark_for(board)
     bookmarks.find_by(board_id: board.id)
@@ -32,6 +32,6 @@ class User < ApplicationRecord
   private
 
   def assign_default_role
-    self.add_role(:general) if self.roles.blank?
+    add_role(:general) if roles.blank?
   end
 end

@@ -16,6 +16,7 @@ ja:
     edit: '編集'
     delete: '削除'
     choose_file: 'ファイルを選択'
+    back_to_root: 'ホームページに戻る'
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'

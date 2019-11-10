@@ -28,11 +28,13 @@
         </div>
       <% end %>
 
-      <% if false  # TODO: パスワード再設定 / 課題22のパスワード再設定機能の実装後、開発開始 %>
       <div class="text-center mt-3 mb-3">
         <p>- OR -</p>
       </div>
-
+      <p class="mb-0">
+        <%= link_to t('shared.back_to_root'), root_path %>
+      </p>
+      <% if false  # TODO: パスワード再設定 / 課題22のパスワード再設定機能の実装後、開発開始 %>
       <p class="mb-0">
         <%= link_to t('user_sessions.reset_password_link'), '#' %>
       </p>

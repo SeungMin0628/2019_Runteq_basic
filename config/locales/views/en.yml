@@ -9,6 +9,7 @@ en:
     edit: 'Edit'
     delete: 'Delete'
     choose_file: 'Choose file'
+    back_to_root: 'Back to home'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'

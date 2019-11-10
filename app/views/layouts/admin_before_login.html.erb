@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= page_title(yield :title) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin/admin', media: 'all' %>
+    <%= javascript_include_tag 'admin/admin' %>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  </head>
+
+  <body class='login-page'>
+    <%# フラッシュメッセージ %>
+    <%= render partial: 'shared/admin/flash' %>
+
+    <%= yield %>
+  </body>
+</html>

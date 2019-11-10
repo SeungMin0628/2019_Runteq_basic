@@ -1,0 +1,24 @@
+<%= content_for :title, t('boards.show.title') %>
+<%= content_for :active, 'boards' %>
+<div class="row mb-3 justify-content-center">
+  <div class="col-es-12 col-sm-10 col-md-8 col-lg-8">
+    <%# 掲示板内容 %>
+    <article class="card">
+      <div class="card-body">
+        <div class='row'>
+          <div class='col-md-3'>
+            <%= image_tag(@board.board_image.url, width: 300, height: 200, class: 'card-img-top img-fluid') %>
+          </div>
+          <div class='col-md-9'>
+            <h3 class="d-inline"><%= @board.title %></h3>
+            <ul class="list-inline">
+              <li class='list-inline-item'><%= "by #{@board.user.decorate.full_name}" %></li>
+              <li class='list-inline-item'><%= l(@board.created_at, format: :long) %></li>
+            </ul>
+          </div>
+        </div>
+        <%= simple_format(h(@board.body), class: 'mb-0').html_safe %>
+      </div>
+    </article>
+  </div>
+</div>

@@ -6,6 +6,7 @@ ja:
       comment: 'コメント'
     attributes:
       user:
+        id: 'ユーザーID'
         first_name: '名'
         last_name: '姓'
         full_name: '氏名'
@@ -13,9 +14,14 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+        role: '権限'
+        created_at: '登録日時'
       board:
+        id: '掲示板ID'
         title: 'タイトル'
         body: '本文'
+        writer: '作成者'
         board_image: 'サムネイル'
+        created_at: '作成日時'
       comment:
         body: 'コメント'

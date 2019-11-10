@@ -15,4 +15,19 @@ Rails.application.routes.draw do
   end
 
   resource :profile, only: %i[show edit update]
+
+  # Admin routes
+  namespace :admin do
+    # Top Page
+    get '/', to: 'dashboards#index', as: 'root'
+      
+    # Sessions
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
+
+    # Resources
+    resources :users, only: %i[index edit update destroy]
+    resources :boards, only: %i[index show edit update destroy]
+  end
 end

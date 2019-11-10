@@ -17,6 +17,15 @@
 
             <%= link_to  "日本語(Japanese)", root_path(locale: :ja), class: 'badge badge-secondary' %>
             <%= link_to  "English", root_path(locale: :en), class: 'badge badge-secondary' %>
+            <%= 
+              if Rails.env.development?
+                link_to(
+                  "Admin", 
+                  admin_login_path,
+                  class: 'badge badge-dark'
+                )
+              end
+            %>
           </span>
         </div>
       </div>

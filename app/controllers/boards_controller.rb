@@ -2,7 +2,8 @@ class BoardsController < ApplicationController
   before_action :find_board, only: %i[edit update destroy]
 
   def index
-    @boards = Board.includes(:user).recent.search(params[:search]).page(params[:page])
+    @q = Board.ransack(params[:q])
+    @boards = @q.result(distinct: true).includes(:user).recent.page(params[:page])
   end
 
   def new
@@ -29,6 +30,7 @@ class BoardsController < ApplicationController
   def edit; end
 
   def update
+    binding.pry
     if @board.update(board_params)
       redirect_to @board, success: t('flash.success.boards.update')
     else

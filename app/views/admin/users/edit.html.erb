@@ -1,0 +1,70 @@
+<%= content_for :title, t('users.edit.title') %>
+<%= content_for :active, 'users' %>
+<div class="row justify-content-center">
+  <div class="col-sm-12 col-md-6">
+    <div class="card card-primary">
+      <%# form start %>
+      <%= form_with model: @user, url: admin_user_path, role: 'form', local: true do |f| %>
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <%= f.label :email %>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :avatar %>
+            <%= 
+              f.file_field( 
+                :avatar,
+                class: 'form-control-file mb-2',
+                accept: 'image/jpg, image/jpeg, image/png, image/gif',
+              )
+            %>
+            <%= f.hidden_field :avatar_cache %>
+  
+            <%# preview of uploaded image %>
+            <%= image_tag f.object.avatar.url, id: 'js-avatar_prev', width: '100px', height: '100px', class: 'img-thumbnail rounded-circle avatar avatar-big' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :role %>
+            <%= 
+              f.select(
+                :role,
+                Role.all_names, 
+                { selected: f.object.decorate.role },
+                { class: 'form-control' }
+              ) 
+            %>
+          </div>
+
+        </div>
+
+        <div class="card-footer">
+          <%= f.submit t('shared.update'), class: "btn btn-primary"%>
+        </div>
+
+      <% end %>
+      <%# form end %>
+    </div>
+  </div>
+</div>

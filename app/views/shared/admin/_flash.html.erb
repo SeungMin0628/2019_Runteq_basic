@@ -1,0 +1,11 @@
+<div class="toasts-top-right fixed">
+  <%# フラッシュメッセージのpartial %>
+  <% flash.each do |type, message| %>
+    <div class="alert <%= flash_class(type) %> alert-dismissable fade show mb-0" role="alert">
+      <%= message %>
+      <button type="button" class="ml-2 close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% end %>
+</div>

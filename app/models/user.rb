@@ -1,6 +1,8 @@
 class User < ApplicationRecord
+  rolify
   authenticates_with_sorcery!
   before_save { self.email = email.downcase }
+  after_create :assign_default_role
   mount_uploader :avatar, AvatarUploader
 
   # Validations
@@ -18,7 +20,18 @@ class User < ApplicationRecord
   has_many :bookmarked_boards, through: :bookmarks, class_name: :Board
   has_many :comments, dependent: :destroy
 
+  # Scope
+  scope :id_desc, -> { order(id: :desc)}
+
   def bookmark_for(board)
     bookmarks.find_by(board_id: board.id)
+  end
+
+  # PRIVATE methods
+
+  private
+
+  def assign_default_role
+    self.add_role(:general) if self.roles.blank?
   end
 end

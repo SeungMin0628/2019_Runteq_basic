@@ -7,14 +7,23 @@ en:
     cancel: 'Cancel'
     update: 'Update'
     edit: 'Edit'
+    delete: 'Delete'
+    choose_file: 'Choose file'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'
   users:
+    index:
+      title: 'User List'
     new:
       title: 'Sign up'
       submit: 'Submit'
       login_link: 'Already have an account?'
+    edit:
+      title: 'Edit user'
+    delete:
+      title: 'Delete user'
+      body: 'Are you sure to delete this user?'
   boards:
     index:
       title: 'Board list'
@@ -32,6 +41,9 @@ en:
     new:
       body_placeholder: 'Input comment...'
       submit: 'Post your comment'
+    delete:
+      title: 'Delete board'
+      body: 'Are you sure to delete this board?'
   bookmarks:
     index:
       title: 'Bookmark list'
@@ -40,3 +52,9 @@ en:
       title: 'Profile'
     edit:
       title: 'Edit profile'
+  dashboards:
+    index:
+      title: 'Dashboard'
+  roles:
+    admin: 'Admin'
+    general: 'General'

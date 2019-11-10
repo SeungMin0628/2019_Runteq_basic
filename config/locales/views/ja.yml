@@ -14,14 +14,23 @@ ja:
     cancel: 'キャンセル'
     update: '更新'
     edit: '編集'
+    delete: '削除'
+    choose_file: 'ファイルを選択'
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'
   users:
+    index:
+      title: 'ユーザー一覧'
     new:
       title: 'ユーザー登録'
       submit: '登録'
       login_link: 'ログインページへ'
+    edit:
+      title: 'ユーザー編集'
+    delete:
+      title: 'ユーザー削除'
+      body: '本当にこのユーザーを削除しますか?'
   boards:
     index:
       title: '掲示板一覧'
@@ -33,6 +42,9 @@ ja:
       title: '掲示板詳細'
     edit:
       title: '掲示板編集'
+    delete:
+      title: '掲示板削除'
+      body: '本当にこの掲示板を削除しますか?'
   comments:
     index:
       no_data: 'コメントがありません。'
@@ -47,3 +59,9 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+  dashboards:
+    index:
+      title: 'ダッシュボード'
+  roles:
+    admin: 'アドミン'
+    general: '一般'

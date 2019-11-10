@@ -1,0 +1,3 @@
+<% if @user.destroyed? %>
+  $('#user-<%= @user.id %>').remove();
+<% end %>

@@ -16,4 +16,8 @@ class UserDecorator < Draper::Decorator
     else "#{object.first_name} #{object.last_name}"
     end
   end
+
+  def role
+    object.roles.first.name
+  end
 end

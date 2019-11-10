@@ -7,6 +7,7 @@ ja:
 
       users:
         create: 'ユーザー登録が完了しました'
+        update: 'ユーザーの情報を更新しました。'
 
       boards:
         create: '掲示板の作成が完了しました'
@@ -23,6 +24,11 @@ ja:
       profiles:
         update: 'プロフィールを更新しました'
 
+    warning:
+      admin:
+        sessions:
+          has_no_role: '権限がありません'
+
     danger:
       user_sessions:
         create: 'ログインに失敗しました'
@@ -30,6 +36,7 @@ ja:
 
       users:
         create: 'ユーザー登録に失敗しました'
+        update: 'ユーザーの更新に失敗しました。'
 
       boards:
         create: '掲示板を作成できませんでした'

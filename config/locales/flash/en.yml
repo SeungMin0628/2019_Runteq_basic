@@ -21,6 +21,10 @@ en:
         create: 'Make a bookmark done.'
         delete: 'Delete a bookmark done.'
 
+      password_resets:
+        create: 'Instructions have been sent to your email.'
+        update: 'Password was successfully updated.'
+
     danger:
       user_sessions:
         create: 'Log in is failed. Please check your email address or password.'
@@ -35,3 +39,6 @@ en:
 
       comments:
         create: 'Post failed. Please check your comment again.'
+
+      password_resets:
+        update: 'パスワードの更新に失敗しました'

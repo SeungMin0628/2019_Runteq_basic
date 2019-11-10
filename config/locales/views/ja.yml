@@ -47,3 +47,10 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+  password_resets:
+    new:
+      title: 'パスワードをお忘れですか?'
+      submit: 'パスワードを再発行する'
+    edit:
+      title: 'パスワード再設定'
+      submit: '再設定'

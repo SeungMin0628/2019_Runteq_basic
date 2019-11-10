@@ -55,6 +55,9 @@ gem 'kaminari', '~> 0.17.0'
 # User CarrierWave, solution for file uploads for Rails
 gem 'carrierwave', '~> 2.0'
 
+# config, Easiest way to add multi-environment yaml settings to Rails
+gem 'config'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -72,6 +75,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Letter Opener, A web interface for browsing Ruby on Rails sent emails
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :test do

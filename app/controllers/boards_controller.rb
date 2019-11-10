@@ -30,7 +30,6 @@ class BoardsController < ApplicationController
   def edit; end
 
   def update
-    binding.pry
     if @board.update(board_params)
       redirect_to @board, success: t('flash.success.boards.update')
     else

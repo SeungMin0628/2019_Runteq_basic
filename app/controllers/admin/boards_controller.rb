@@ -13,7 +13,6 @@ class Admin::BoardsController < Admin::AdminController
   def edit; end
 
   def update
-    binding.pry
     if @board.update(board_params)
       redirect_to admin_board_path(id: @board.id), success: t('flash.success.boards.update')
     else

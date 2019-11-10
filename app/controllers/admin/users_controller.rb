@@ -16,9 +16,9 @@ class Admin::UsersController < Admin::AdminController
         @user.add_role new_role
       end
 
-      redirect_to admin_users_path, success: 'update success';
+      redirect_to admin_users_path, success: t('flash.success.users.update');
     else
-      flash.now[:danger] = 'update false';
+      flash.now[:danger] = t('flash.danger.users.update');
       render :edit
     end
   end

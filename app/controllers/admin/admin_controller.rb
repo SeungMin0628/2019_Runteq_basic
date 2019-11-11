@@ -13,7 +13,6 @@ class Admin::AdminController < ApplicationController
   # redefinition of 'sorcery#not_authenticated'
   # ログインしなかったユーザーがアクセスした際、警告メッセージを表示しログイン画面に遷移させる
   def not_authenticated
-    flash[:danger] = t('flash.danger.user_sessions.need_login')
-    redirect_to admin_login_path
+    redirect_to admin_login_path, danger: t('flash.danger.user_sessions.need_login')
   end
 end

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @status = @comment.update(comment_params)
+    @status = @comment.update(comment_update_params)
   end
 
   def destroy
@@ -16,11 +16,11 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    if params.key?(:board_id)
-      params.require(:comment).permit(:body).merge(board_id: params[:board_id])
-    else
-      params.require(:comment).permit(:body)
-    end
+    params.require(:comment).permit(:body).merge(board_id: params[:board_id])
+  end
+
+  def comment_update_params
+    params.require(:comment).permit(:body)
   end
 
   def find_comemnt

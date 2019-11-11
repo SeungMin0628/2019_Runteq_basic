@@ -1,5 +1,5 @@
 class Admin::BoardsController < Admin::AdminController
-  before_action :find_board, except: %i[index]
+  before_action :find_board, only: %i[show edit update destroy]
 
   def index
     @q = Board.ransack(params[:q])
@@ -22,7 +22,7 @@ class Admin::BoardsController < Admin::AdminController
   end
 
   def destroy
-    @board.destroy
+    @board.destroy!
   end
 
   private

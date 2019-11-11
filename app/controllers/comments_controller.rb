@@ -1,23 +1,29 @@
 class CommentsController < ApplicationController
+  before_action :find_comemnt, only: %i[update destroy]
+
   def create
-    @comment = current_user.comments.build(comment_params)
+    @comment = current_user.comments.create(comment_params)
+  end
 
-    if @comment.save
-      flash[:success] = t('flash.success.comments.create')
-    else
-      flash[:danger] = t('flash.danger.comments.create')
-    end
+  def update
+    @status = @comment.update(comment_update_params)
+  end
 
-    redirect_to board_path(params[:board_id])
+  def destroy
+    @comment.destroy
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(
-      :body
-    ).merge(
-      board_id: params[:board_id]
-    )
+    params.require(:comment).permit(:body).merge(board_id: params[:board_id])
+  end
+
+  def comment_update_params
+    params.require(:comment).permit(:body)
+  end
+
+  def find_comemnt
+    @comment = current_user.comments.find(params[:id])
   end
 end

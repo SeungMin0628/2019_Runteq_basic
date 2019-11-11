@@ -1,0 +1,16 @@
+<% if @comment.valid? %>
+  <%# save comment successfully %>
+  $('#comment_body').removeClass('is-invalid');
+  $('#comment_body').val('');
+
+  <%# if comment table is not exists, then replace no-comment message and comment table %>
+  if(!$('#js-table-comment').length) {
+    $('#js-no-comment').replaceWith('<table id="js-table-comment" class="table"><tbody></tbody></table>');
+  }
+
+  $('#js-table-comment').prepend(`<%= render @comment %>`);
+  $('#comment-<%= @comment.id %>').addClass('comment-inputted border-primary');
+<% else %>
+  <%# failed saving comment %>
+  $('#comment_body').addClass('is-invalid');
+<% end %>

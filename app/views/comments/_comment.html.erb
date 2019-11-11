@@ -13,10 +13,22 @@
     %>
     <% if comment.owned_by? current_user %>
     <%# Only writer, show edit form %>
-      <div class="d-none">
-        <textarea class="form-control mb-1"><%= comment.body %></textarea>
-        <button class='btn btn-light'><%= t('shared.cancel') %></button>
-        <button class='btn btn-success'><%= t('shared.update') %></button>
+      <div class="d-none" id="js-comment-edit-form-<%= comment.id %>">
+        <%= form_with(model: comment, url: comment_path(id: comment.id), method: :put) do |f| %>
+          <div class='input-group'>
+            <%= f.text_area :body, id: "comment-#{comment.id}-body", value: comment.body, class: 'form-control mb-1', placeholder: t('comments.new.body_placeholder') %>
+            <%= 
+              content_tag(
+                :div, 
+                t('flash.danger.comments.update'), 
+                id: "js-comment-#{comment.id}-body-validation",
+                class: 'invalid-feedback'
+              ) 
+            %>
+          </div>
+          <button type="button" name="js-comment-edit-cancel" class='btn btn-light' data-comment-id="<%= comment.id %>"><%= t('shared.cancel') %></button>
+          <%= f.submit t('shared.update'), class: 'btn btn-success' %>
+        <% end %>
       </div>
     <% end %>
   </td>
@@ -26,14 +38,10 @@
       <% if comment.owned_by? current_user %>
       <%# Only writer, show edit and delete action button %>
         <li class="list-inline-item">
-          <a href="#">
-            <i class="fa fa-edit"></i>
-          </a>
+          <i name="js-comment-edit" class="fa fa-edit btn-link cursor-pointer" data-comment-id="<%= comment.id %>"></i>
         </li>
         <li class="list-inline-item">
-          <a href="#">
-            <i class="fa fa-trash"></i>
-          </a>
+          <i class="fa fa-trash btn-link cursor-pointer" data-toggle="modal" data-target="#delete-comment-confirm-modal" data-delete-url="<%= comment_path(id: comment.id) %>"></i>
         </li>
       <% end %>
     </ul>

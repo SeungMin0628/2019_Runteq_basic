@@ -39,6 +39,7 @@ en:
 
       comments:
         create: 'Post failed. Please check your comment again.'
+        update: 'Update failed. Please check your comment again.'
 
       password_resets:
-        update: 'パスワードの更新に失敗しました'
+        update: 'Reset password is failed. Please check it again.'

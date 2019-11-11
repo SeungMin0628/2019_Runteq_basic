@@ -9,12 +9,12 @@ ja:
   shared:
     login: 'ログイン'
     logout: 'ログアウト'
-    profile: 'プロフィール'
     search_keyword: '検索ワード'
     search: '検索'
     cancel: 'キャンセル'
     update: '更新'
     delete: '削除'
+    edit: '編集'
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'
@@ -46,3 +46,15 @@ ja:
   bookmarks:
     index:
       title: 'ブックマーク一覧'
+  profile:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+  password_resets:
+    new:
+      title: 'パスワードをお忘れですか?'
+      submit: 'パスワードを再発行する'
+    edit:
+      title: 'パスワード再設定'
+      submit: '再設定'

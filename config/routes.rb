@@ -13,4 +13,9 @@ Rails.application.routes.draw do
       get 'bookmarks', to: 'bookmarks#index'
     end
   end
+
+  resources :password_resets, only: %i[new create edit update]
+  resource :profile, only: %i[show edit update]
+
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

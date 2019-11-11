@@ -2,12 +2,12 @@ en:
   shared:
     login: 'Log in'
     logout: 'Log out'
-    profile: 'Profile'
     search_keyword: 'input keyword...'
     search: 'Search'
     cancel: 'Cancel'
     update: 'Update'
     delete: 'Delete'
+    edit: 'Edit'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'
@@ -39,3 +39,14 @@ en:
   bookmarks:
     index:
       title: 'Bookmark list'
+  profile:
+    show:
+      title: 'Profile'
+    edit:
+      title: 'Edit profile'
+  password_resets:
+    new:
+      title: 'Account recovery'
+      submit: 'Request reset password'
+    edit:
+      title: 'Reset password'

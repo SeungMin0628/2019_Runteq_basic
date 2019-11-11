@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  # before_save { self.email = email.downcase }
+  before_save { self.email = email.downcase }
+  mount_uploader :avatar, AvatarUploader
 
   # Validations
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -10,6 +11,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :last_name, :first_name, presence: true
+  validates :reset_password_token, uniqueness: true, allow_nil: true
 
   # Relations
   has_many :boards, dependent: :destroy

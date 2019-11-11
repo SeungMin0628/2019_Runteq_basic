@@ -24,7 +24,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def destroy
-    return @user.destroy unless @user == current_user
+    @user.destroy! unless @user == current_user
   end
 
   private

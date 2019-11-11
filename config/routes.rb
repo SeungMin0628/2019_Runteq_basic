@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # Admin routes
   namespace :admin do
     # Top Page
-    get '/', to: 'dashboards#index', as: 'root'
+    root to: 'dashboards#index'
 
     # Sessions
     get '/login', to: 'sessions#new'

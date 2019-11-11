@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::AdminController
-  before_action :find_user, except: %i[index]
+  before_action :find_user, only: %i[edit update destory]
 
   def index
     @q = User.ransack(params[:q])

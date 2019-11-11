@@ -6,25 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Add admin user
-ADMIN_EMAIL = 'admin@runteq.com'
-if !User.find_by_email(ADMIN_EMAIL).blank?
-  User.find_by_email(ADMIN_EMAIL).destroy
+# add or find admin user
+ADMIN_EMAIL = 'admin@example.com'
+admin = User.find_or_create_by!(email: ADMIN_EMAIL) do |user|
+  user.password = 'secret'
+  user.password_confirmation = 'secret'
+  user.first_name = 'Admin'
+  user.last_name = 'Name'
 end
 
-admin = User.new(
-  email: ADMIN_EMAIL,
-  password: 'secret',
-  password_confirmation: 'secret',
-  first_name: 'Admin',
-  last_name: 'Name'
-)
+admin.remove_role :general if admin.has_role? :general
+admin.add_role :admin unless admin.has_role? :admin
 
-admin.add_role :admin
+p 'Create or find admin account usccessfully!'
 
-if admin.save!
-  p 'Create admin account usccessfully!'
-end
 
 # When user isn't exists, then create dummy user
 # if !User.with_role(:general).exists? 

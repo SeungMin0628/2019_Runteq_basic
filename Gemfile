@@ -58,6 +58,12 @@ gem 'carrierwave', '~> 2.0'
 # config, Easiest way to add multi-environment yaml settings to Rails
 gem 'config'
 
+# A simple wrapper for posting to slack channels
+gem 'slack-notifier'
+
+# Exception Notifier Plugin for Rails
+gem 'exception_notification'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

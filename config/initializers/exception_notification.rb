@@ -28,11 +28,7 @@ ExceptionNotification.configure do |config|
   WEBHOOK_URL = 'https://hooks.slack.com/services/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'
   config.add_notifier :slack, {
     webhook_url: WEBHOOK_URL,
-    # channel: '#exceptions',
-    # additional_parameters: {
-    #   icon_url: 'http://image.jpg',
-    #   mrkdwn: true
-    # }
+    username: 'seungmin.lee'
   }
 
   # Campfire notifier sends notifications to your Campfire room. Requires 'tinder' gem.

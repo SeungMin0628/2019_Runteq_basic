@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
   end
 
-  def render_404(e)
+  def render_404
     render template: 'errors/error_404', status: 404, layout: nil, content_type: 'text/html'
   end
 end

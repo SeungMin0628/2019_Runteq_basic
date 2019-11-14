@@ -1,7 +1,5 @@
 require 'exception_notification/rails'
 
-
-
 ExceptionNotification.configure do |config|
   # Ignore additional exception types.
   # ActiveRecord::RecordNotFound, Mongoid::Errors::DocumentNotFound, AbstractController::ActionNotFound and ActionController::RoutingError are already added.
@@ -25,9 +23,8 @@ ExceptionNotification.configure do |config|
   #   exception_recipients: %w{exceptions@example.com}
   # }
 
-  WEBHOOK_URL = 'https://hooks.slack.com/services/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'
   config.add_notifier :slack, {
-    webhook_url: WEBHOOK_URL,
+    webhook_url: 'https://hooks.slack.com/services/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',
     username: 'seungmin.lee'
   }
 

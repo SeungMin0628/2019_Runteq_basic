@@ -3,3 +3,8 @@ web:
 
 mail:
   from: 'from@example.com'
+
+facebook:
+  id: 2465788857075005
+  secret: 'f7c63beeab037d84877262d031885a06'
+  callback: 'http://localhost:3000/oauth/callback?provider=facebook'

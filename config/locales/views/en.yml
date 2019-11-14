@@ -8,6 +8,7 @@ en:
     update: 'Update'
     delete: 'Delete'
     edit: 'Edit'
+    oauths: 'Continue with %{provider}'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'

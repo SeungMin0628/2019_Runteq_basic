@@ -10,7 +10,7 @@ class OauthsController < ApplicationController
   def callback
     provider = params[:provider]
 
-    if @user = login_from(provider)
+    if (@user = login_from(provider))
       redirect_to boards_path, success: t('flash.success.oauths.callback', provider: provider.titleize)
     else
       begin

@@ -115,11 +115,11 @@ Rails.application.config.sorcery.configure do |config|
   config.facebook.key = Settings.facebook[:id]
   config.facebook.secret = Settings.facebook[:secret]
   config.facebook.callback_url = Settings.facebook[:callback]
-  config.facebook.user_info_path = "me?fields=email,first_name,last_name"
-  config.facebook.user_info_mapping = { email: "email", first_name: 'first_name', last_name: 'last_name' }
-  config.facebook.access_permissions = ["email"]
-  config.facebook.display = "page"
-  config.facebook.api_version = "v5.0"
+  config.facebook.user_info_path = 'me?fields=email,first_name,last_name'
+  config.facebook.user_info_mapping = { email: 'email', first_name: 'first_name', last_name: 'last_name' }
+  config.facebook.access_permissions = ['email']
+  config.facebook.display = 'page'
+  config.facebook.api_version = 'v5.0'
   config.facebook.parse = :json
   #
   # config.instagram.key = ""

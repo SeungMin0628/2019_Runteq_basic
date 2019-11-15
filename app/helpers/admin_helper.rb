@@ -1,5 +1,9 @@
 module AdminHelper
-  def nav_item_class(nav, active)
-    return 'active' if nav == active
+  def active_if(*current_controllers)
+    'active' if active_menu?(*current_controllers)
+  end
+
+  def active_menu?(*current_controllers)
+    current_controllers.any? { |c| c == controller_path }
   end
 end

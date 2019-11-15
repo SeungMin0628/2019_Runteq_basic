@@ -1,4 +1,3 @@
-<% active = yield :active %>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <a href="#" class="brand-link">
     <%= image_tag('AdminLTELogo.png', class: 'brand-image img-circle elevation-3', alt: 'AdminLTE Docs Logo Small') %>
@@ -19,21 +18,21 @@
       <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu">
 
         <li class="nav-item">
-          <a href="<%= admin_root_path %>" class="nav-link <%= nav_item_class('dashboards', active) %>">
+          <a href="<%= admin_root_path %>" class="nav-link <%= active_if('admin/dashboards') %>">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p><%= t('dashboards.index.title') %></p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="<%= admin_boards_path %>" class="nav-link <%= nav_item_class('boards', active) %>">
+          <a href="<%= admin_boards_path %>" class="nav-link <%= active_if('admin/boards') %>">
             <i class="nav-icon fas fa-sticky-note"></i>
             <p><%= t('boards.index.title') %></p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="<%= admin_users_path %>" class="nav-link <%= nav_item_class('users', active) %>">
+          <a href="<%= admin_users_path %>" class="nav-link <%= active_if('admin/users') %>">
             <i class="nav-icon fas fa-users"></i>
             <p><%= t('users.index.title') %></p>
           </a>

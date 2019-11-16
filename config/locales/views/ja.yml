@@ -15,6 +15,7 @@ ja:
     update: '更新'
     delete: '削除'
     edit: '編集'
+    oauths: '%{provider}で接続する'
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'

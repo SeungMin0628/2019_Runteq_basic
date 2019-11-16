@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_boards, through: :bookmarks, class_name: :Board
   has_many :comments, dependent: :destroy
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
 
   def bookmark_for(board)
     bookmarks.find_by(board_id: board.id)

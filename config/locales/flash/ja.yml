@@ -27,6 +27,9 @@ ja:
         create: 'メールを送信しました。メールのURLをクリックして再設定を行ってください。'
         update: 'パスワードを更新しました'
 
+      oauths:
+        callback: '%{provider}認証に成功しました'
+
     danger:
       user_sessions:
         create: 'ログインに失敗しました'
@@ -48,3 +51,6 @@ ja:
 
       password_resets:
         update: 'パスワードの更新に失敗しました'
+
+      oauths:
+        callback: '%{provider}認証に失敗しました'

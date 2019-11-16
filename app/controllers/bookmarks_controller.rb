@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   def index
-    @boards = current_user.bookmarked_boards.recent.search(params[:search]).page(params[:page])
+    @q = current_user.bookmarked_boards.ransack(params[:q])
+    @boards = @q.result(distinct: true).includes(:user).recent.page(params[:page])
   end
 
   def create

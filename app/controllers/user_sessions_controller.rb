@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
 
     if @user
       # ログイン成功
-      redirect_back_or_to boards_path, success: t('flash.success.user_sessions.create')
+      redirect_back_or_to boards_path, success: t('flash.success.user_sessions.create', first_name: @user.first_name)
     else
       # ログイン失敗
       flash.now[:danger] = t('flash.danger.user_sessions.create')

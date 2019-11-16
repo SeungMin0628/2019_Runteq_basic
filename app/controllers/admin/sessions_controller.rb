@@ -9,7 +9,7 @@ class Admin::SessionsController < Admin::AdminController
 
     if @user
       # login success => go to dashboards
-      redirect_back_or_to admin_root_path, success: t('flash.success.user_sessions.create')
+      redirect_back_or_to admin_root_path, success: t('flash.success.user_sessions.create', first_name: @user.first_name)
     else
       # login fail => back to login form
       flash.now[:danger] = t('flash.danger.user_sessions.create')

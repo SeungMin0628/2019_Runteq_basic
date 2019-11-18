@@ -5,9 +5,7 @@ class Admin::AdminController < ApplicationController
   private
 
   def check_admin
-    if logged_in?
-      return redirect_to(root_path, warning: t('flash.warning.admin.sessions.has_no_role')) unless current_user.has_role? :admin
-    end
+    return redirect_to(root_path, warning: t('flash.warning.admin.sessions.has_no_role')) unless current_user.has_role? :admin
   end
 
   # redefinition of 'sorcery#not_authenticated'

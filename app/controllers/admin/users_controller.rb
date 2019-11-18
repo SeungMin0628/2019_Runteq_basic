@@ -1,4 +1,4 @@
-class Admin::UsersController < Admin::AdminController
+class Admin::UsersController < Admin::BaseController
   before_action :find_user, only: %i[edit update destory]
 
   def index

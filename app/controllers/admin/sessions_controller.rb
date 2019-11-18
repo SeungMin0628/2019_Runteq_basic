@@ -1,4 +1,4 @@
-class Admin::SessionsController < Admin::AdminController
+class Admin::SessionsController < Admin::BaseController
   skip_before_action :require_login, only: %i[new create]
   skip_before_action :check_admin, only: %i[new create]
   layout 'admin_before_login'

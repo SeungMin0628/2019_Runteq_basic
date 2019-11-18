@@ -1,4 +1,4 @@
-class Admin::BoardsController < Admin::AdminController
+class Admin::BoardsController < Admin::BaseController
   before_action :find_board, only: %i[show edit update destroy]
 
   def index

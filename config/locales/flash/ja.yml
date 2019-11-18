@@ -2,7 +2,7 @@ ja:
   flash:
     success:
       user_sessions:
-        create: "ログインしました"
+        create: "こんにちは、%{first_name}さん"
         destroy: 'ログアウトしました'
 
       users:

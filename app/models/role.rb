@@ -10,9 +10,4 @@ class Role < ApplicationRecord
             allow_nil: true
 
   scopify
-
-  # Class Method
-  def self.all_names
-    all.map { |role| [I18n.t("roles.#{role.name}"), role.name] }
-  end
 end

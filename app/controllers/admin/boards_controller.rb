@@ -6,9 +6,7 @@ class Admin::BoardsController < Admin::BaseController
     @boards = @q.result(distinct: true).includes(:user).recent.page(params[:page])
   end
 
-  def show
-    @comments = @board.comments.includes(:user).all
-  end
+  def show; end
 
   def edit; end
 

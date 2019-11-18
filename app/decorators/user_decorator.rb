@@ -17,7 +17,7 @@ class UserDecorator < ApplicationDecorator
     end
   end
 
-  def role
+  def role_name
     object.roles.first.name
   end
 end

@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).preload(:roles).id_desc.page(params[:page])
+    @users = @q.result(distinct: true).preload(:roles).recent.page(params[:page])
   end
 
   def edit; end

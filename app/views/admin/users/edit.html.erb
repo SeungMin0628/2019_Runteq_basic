@@ -49,8 +49,8 @@
             <%= 
               f.select(
                 :role,
-                Role.all_names, 
-                { selected: f.object.decorate.role },
+                RoleDecorator.all_names,
+                { selected: f.object.decorate.role_name },
                 { class: 'form-control' }
               ) 
             %>

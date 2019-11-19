@@ -8,12 +8,12 @@
     <%=
       link_to(
         content_tag(:i, '', class: 'fas fa-user-edit'),
-        edit_admin_user_path(id: user.id),
+        edit_admin_user_path(id: user),
         class: 'btn btn-link'
       )
     %>
     <% unless user == current_user %>
-      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#js-user-delete-confirm-modal" data-delete-url="<%= admin_user_path(id: user.id) %>">
+      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#js-user-delete-confirm-modal" data-delete-url="<%= admin_user_path(id: user) %>">
         <i class="fas fa-trash"></i>
       </button>
     <% end %>

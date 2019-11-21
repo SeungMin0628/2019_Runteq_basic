@@ -1,8 +1,6 @@
 class User < ApplicationRecord
-  rolify
   authenticates_with_sorcery!
   before_save { self.email = email.downcase }
-  after_create :assign_default_role
   mount_uploader :avatar, AvatarUploader
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -22,9 +20,11 @@ class User < ApplicationRecord
     bookmarks.find_by(board_id: board.id)
   end
 
-  private
+  def set_role(role_name)
+    update(role: role_name.to_s)
+  end
 
-  def assign_default_role
-    add_role(:general) if roles.blank?
+  def has_role?(role_name)
+    role == role_name.to_s
   end
 end

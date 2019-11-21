@@ -13,10 +13,8 @@ admin = User.find_or_create_by!(email: ADMIN_EMAIL) do |user|
   user.password_confirmation = 'secret'
   user.first_name = 'Admin'
   user.last_name = 'Name'
+  user.role = 'admin'
 end
-
-admin.remove_role :general if admin.has_role? :general
-admin.add_role :admin unless admin.has_role? :admin
 
 p 'Create or find admin account usccessfully!'
 

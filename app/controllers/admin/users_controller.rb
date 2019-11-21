@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).preload(:roles).recent.page(params[:page])
+    @users = @q.result(distinct: true).recent.page(params[:page])
   end
 
   def edit; end
@@ -11,11 +11,6 @@ class Admin::UsersController < Admin::BaseController
   def update
     if @user.update(user_params)
       # update role if role is changed
-      unless @user.has_role?(new_role = params[:user][:role].to_sym)
-        @user.roles.destroy_all
-        @user.add_role new_role
-      end
-
       redirect_to admin_users_path, success: t('flash.success.users.update')
     else
       flash.now[:danger] = t('flash.danger.users.update')
@@ -39,7 +34,8 @@ class Admin::UsersController < Admin::BaseController
       :first_name,
       :last_name,
       :avatar,
-      :avatar_cache
+      :avatar_cache,
+      :role
     )
   end
 end

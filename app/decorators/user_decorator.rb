@@ -17,7 +17,7 @@ class UserDecorator < ApplicationDecorator
     end
   end
 
-  def role_name
-    object.roles.first.name
+  def self.all_roles
+    User.distinct.pluck(:role).map { |role| [I18n.t("roles.#{role}"), role] }
   end
 end

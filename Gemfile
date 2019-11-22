@@ -55,9 +55,6 @@ gem 'kaminari', '~> 0.17.0'
 # User CarrierWave, solution for file uploads for Rails
 gem 'carrierwave', '~> 2.0'
 
-# Rolify, Role management library with resource scoping
-gem 'rolify'
-
 # Use ransack, Object-based searching.
 gem 'ransack'
 

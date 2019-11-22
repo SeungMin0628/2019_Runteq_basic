@@ -208,7 +208,6 @@ GEM
     regexp_parser (1.6.0)
     request_store (1.4.1)
       rack (>= 1.4)
-    rolify (5.2.0)
     romaji (0.2.4)
       rake (>= 0.8.0)
     rspec-core (3.8.2)
@@ -316,7 +315,6 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rails-i18n (~> 5.1)
   ransack
-  rolify
   rspec-rails
   sass-rails (~> 5.0)
   sorcery

@@ -13,7 +13,7 @@ admin = User.find_or_create_by!(email: ADMIN_EMAIL) do |user|
   user.password_confirmation = 'secret'
   user.first_name = 'Admin'
   user.last_name = 'Name'
-  user.role = 'admin'
+  user.role = :admin
 end
 
 p 'Create or find admin account usccessfully!'

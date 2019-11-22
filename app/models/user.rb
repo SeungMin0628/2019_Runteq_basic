@@ -16,12 +16,10 @@ class User < ApplicationRecord
 
   scope :recent, -> { order(id: :desc) }
 
+  enum role: %i[general admin]
+
   def bookmark_for(board)
     bookmarks.find_by(board_id: board.id)
-  end
-
-  def set_role(role_name)
-    update(role: role_name.to_s)
   end
 
   def has_role?(role_name)

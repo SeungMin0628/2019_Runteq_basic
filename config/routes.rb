@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :bookmarks, shallow: true, only: %i[create destroy]
       collection do
         get 'bookmarks', to: 'bookmarks#index'
+      end
     end
 
     resource :profile, only: %i[show edit update]  

@@ -22,6 +22,9 @@ en:
         create: 'Make a bookmark done.'
         delete: 'Delete a bookmark done.'
 
+      oauths:
+        callback: 'Logged in from %{provider}!'
+
     warning:
       admin:
         sessions:
@@ -30,9 +33,6 @@ en:
       password_resets:
         create: 'Instructions have been sent to your email.'
         update: 'Password was successfully updated.'
-
-      oauths:
-        callback: 'Logged in from %{provider}!'
 
     danger:
       user_sessions:

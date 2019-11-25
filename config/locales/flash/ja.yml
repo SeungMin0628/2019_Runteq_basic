@@ -24,6 +24,9 @@ ja:
       profiles:
         update: 'プロフィールを更新しました'
 
+      oauths:
+        callback: '%{provider}認証に成功しました'
+
     warning:
       admin:
         sessions:
@@ -32,10 +35,6 @@ ja:
       password_resets:
         create: 'メールを送信しました。メールのURLをクリックして再設定を行ってください。'
         update: 'パスワードを更新しました'
-
-      oauths:
-        callback: '%{provider}認証に成功しました'
-
 
     danger:
       user_sessions:

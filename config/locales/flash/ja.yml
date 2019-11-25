@@ -2,11 +2,12 @@ ja:
   flash:
     success:
       user_sessions:
-        create: "ログインしました"
+        create: "こんにちは、%{first_name}さん"
         destroy: 'ログアウトしました'
 
       users:
         create: 'ユーザー登録が完了しました'
+        update: 'ユーザーの情報を更新しました。'
 
       boards:
         create: '掲示板の作成が完了しました'
@@ -23,12 +24,18 @@ ja:
       profiles:
         update: 'プロフィールを更新しました'
 
+    warning:
+      admin:
+        sessions:
+          has_no_role: '権限がありません'
+
       password_resets:
         create: 'メールを送信しました。メールのURLをクリックして再設定を行ってください。'
         update: 'パスワードを更新しました'
 
       oauths:
         callback: '%{provider}認証に成功しました'
+
 
     danger:
       user_sessions:
@@ -37,6 +44,7 @@ ja:
 
       users:
         create: 'ユーザー登録に失敗しました'
+        update: 'ユーザーの更新に失敗しました。'
 
       boards:
         create: '掲示板を作成できませんでした'

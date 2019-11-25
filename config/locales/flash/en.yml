@@ -8,6 +8,7 @@ en:
 
       users:
         create: 'Welcome! Please log in.'
+        update: 'User update complete.'
 
       boards:
         create: 'Your board is created successfully.'
@@ -20,6 +21,11 @@ en:
       bookmarks:
         create: 'Make a bookmark done.'
         delete: 'Delete a bookmark done.'
+
+    warning:
+      admin:
+        sessions:
+          has_no_role: "Invalid role."
 
       password_resets:
         create: 'Instructions have been sent to your email.'
@@ -35,6 +41,7 @@ en:
 
       users:
         create: 'Sign in is failed. Please check below messages.'
+        update: 'User update is failed. Please check it again.'
 
       boards:
         create: 'Submit failed. Please check again.'

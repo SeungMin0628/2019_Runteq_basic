@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= page_title(yield :title) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin/admin', media: 'all' %>
+    <%= javascript_include_tag 'admin/admin' %>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  </head>
+
+  <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
+    <div class="wrapper">
+      <%# フラッシュメッセージ %>
+      <%= render partial: 'shared/admin/flash' %>
+      <%= render partial: 'shared/admin/header' %>
+      <%= render partial: 'shared/admin/navbar', active: (yield :active) %>
+
+      <%# Main content start %>
+      <div class="content-wrapper">
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0 text-dark"><%= yield :title %></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <%# Main content end %>
+
+      <%= render partial: 'shared/admin/footer' %>
+    </div>
+  </body>
+</html>

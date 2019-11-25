@@ -1,9 +1,12 @@
+/*
+ *= require_self
+ */
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
+@import 'bootstrap/dist/css/bootstrap.min';
 
 // Use font-awesome5
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import "@fortawesome/fontawesome-free/css/all.min";
 
 @import './top';
 @import './boards';

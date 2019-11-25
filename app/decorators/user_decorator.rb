@@ -1,4 +1,4 @@
-class UserDecorator < Draper::Decorator
+class UserDecorator < ApplicationDecorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -15,5 +15,9 @@ class UserDecorator < Draper::Decorator
     when :ja then "#{object.last_name} #{object.first_name}"
     else "#{object.first_name} #{object.last_name}"
     end
+  end
+
+  def self.all_roles
+    User.distinct.pluck(:role).map { |role| [I18n.t("roles.#{role}"), role] }
   end
 end

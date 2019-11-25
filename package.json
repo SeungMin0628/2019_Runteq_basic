@@ -1,5 +1,16 @@
 {
   "name": "runteq_normal",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "admin-lte": "^3.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/runteq/3_leeseungmin.git",
+  "author": "SeungMin0628 <smlee95kr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {}
 }

@@ -1,0 +1,18 @@
+// Place all the styles related to the admin/Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ *= require_self
+ */
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import 'bootstrap/dist/css/bootstrap.min';
+
+// Use font-awesome5
+@import "@fortawesome/fontawesome-free/css/all.min";
+
+// Use AdminLTE
+@import 'admin-lte/dist/css/adminlte.min';
+
+@import './sessions';

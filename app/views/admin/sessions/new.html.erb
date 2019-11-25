@@ -1,0 +1,44 @@
+<%= content_for :title, t('shared.login') %>
+<div class="login-box">
+  <div class="login-logo">
+    <h1><%= t('shared.login') %></h3>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <%= form_with(url: admin_login_path, method: :post, local: true) do |f| %>
+        <div class="input-group mb-3">
+          <%= f.email_field :email, class: 'form-control', placeholder: User.human_attribute_name(:email), require: true %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+                <i class="fas fa-envelope"></i>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <%= f.password_field :password, class: 'form-control', placeholder: User.human_attribute_name(:password), require: true %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+        </div>
+        <div class="action">
+          <%= f.submit t('shared.login'), class: 'btn btn-primary btn-block' %>
+        </div>
+      <% end %>
+
+      <div class="text-center mt-3 mb-3">
+        <p>- OR -</p>
+      </div>
+      <p class="mb-0">
+        <%= link_to t('shared.back_to_root'), root_path %>
+      </p>
+      <% if false  # TODO: パスワード再設定 / 課題22のパスワード再設定機能の実装後、開発開始 %>
+      <p class="mb-0">
+        <%= link_to t('user_sessions.reset_password_link'), '#' %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>

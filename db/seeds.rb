@@ -6,9 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# add or find admin user
+ADMIN_EMAIL = 'admin@example.com'
+admin = User.find_or_create_by!(email: ADMIN_EMAIL) do |user|
+  user.password = 'secret'
+  user.password_confirmation = 'secret'
+  user.first_name = 'Admin'
+  user.last_name = 'Name'
+  user.role = :admin
+end
+
+p 'Create or find admin account usccessfully!'
+
+
 # When user isn't exists, then create dummy user
-if !User.exists? 
-  User.create!( 
+# if !User.with_role(:general).exists? 
+20.times { |count|
+  user = User.create!( 
     email: Faker::Internet.unique.email,
     password: 'secret',
     password_confirmation: 'secret',
@@ -17,16 +31,14 @@ if !User.exists?
   )
 
   p 'Create dummy user successfully!'
-end
 
-# Create dummy 10 boards
-user = User.first
+  # Create dummy 3 boards
+  3.times { |count|
+    user.boards.create!(
+      title: Faker::Book.unique.title,
+      body: Faker::Source.hello_world
+    )
 
-10.times { |count|
-  user.boards.create!(
-    title: Faker::Book.unique.title,
-    body: Faker::Source.hello_world
-  )
-
-  p "Create dummy board #{count} successfully!"
+    p "Create dummy board #{count} successfully!"
+  }
 }

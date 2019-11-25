@@ -55,6 +55,9 @@ gem 'kaminari', '~> 0.17.0'
 # User CarrierWave, solution for file uploads for Rails
 gem 'carrierwave', '~> 2.0'
 
+# Use ransack, Object-based searching.
+gem 'ransack'
+
 # config, Easiest way to add multi-environment yaml settings to Rails
 gem 'config'
 

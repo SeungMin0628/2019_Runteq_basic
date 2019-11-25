@@ -29,6 +29,14 @@ ja:
         sessions:
           has_no_role: '権限がありません'
 
+      password_resets:
+        create: 'メールを送信しました。メールのURLをクリックして再設定を行ってください。'
+        update: 'パスワードを更新しました'
+
+      oauths:
+        callback: '%{provider}認証に成功しました'
+
+
     danger:
       user_sessions:
         create: 'ログインに失敗しました'
@@ -44,6 +52,13 @@ ja:
 
       comments:
         create: 'コメントの作成に失敗しました。コメントの内容を確認してください。'
+        update: 'コメントの更新に失敗しました。コメントの内容を確認してください。'
 
       profiles:
         update: 'プロフィールの更新に失敗しました'
+
+      password_resets:
+        update: 'パスワードの更新に失敗しました'
+
+      oauths:
+        callback: '%{provider}認証に失敗しました'

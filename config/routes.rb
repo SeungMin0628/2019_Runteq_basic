@@ -8,14 +8,14 @@ Rails.application.routes.draw do
 
     resources :users, only: %i[new create]
     resources :boards do
-      resources :comments, shallow: true, only: %i[create]
+      resources :comments, shallow: true, only: %i[create update destroy]
       resources :bookmarks, shallow: true, only: %i[create destroy]
       collection do
         get 'bookmarks', to: 'bookmarks#index'
-      end
     end
 
-    resource :profile, only: %i[show edit update]
+    resource :profile, only: %i[show edit update]  
+    resources :password_resets, only: %i[new create edit update]
 
     # Admin routes
     namespace :admin do
@@ -32,4 +32,10 @@ Rails.application.routes.draw do
       resources :boards, only: %i[index show edit update destroy]
     end
   end
+
+  post 'oauth/callback', to: 'oauths#callback'
+  get 'oauth/callback', to: 'oauths#callback' # for use with Github, Facebook
+  get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
+
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

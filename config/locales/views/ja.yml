@@ -13,10 +13,12 @@ ja:
     search: '検索'
     cancel: 'キャンセル'
     update: '更新'
+    delete: '削除'
     edit: '編集'
     delete: '削除'
     choose_file: 'ファイルを選択'
     back_to_root: 'ホームページに戻る'
+    oauths: '%{provider}で接続する'
   user_sessions:
     register_link: '登録ページへ'
     reset_password_link: 'パスワードをお忘れの方はこちら'
@@ -52,6 +54,9 @@ ja:
     new:
       body_placeholder: 'コメントを入力してください。'
       submit: '投稿'
+    delete:
+      title: 'コメント削除'
+      confirm_message: '本当にこのコメントを削除しますか?'
   bookmarks:
     index:
       title: 'ブックマーク一覧'
@@ -66,3 +71,10 @@ ja:
   roles:
     admin: 'アドミン'
     general: '一般'
+  password_resets:
+    new:
+      title: 'パスワードをお忘れですか?'
+      submit: 'パスワードを再発行する'
+    edit:
+      title: 'パスワード再設定'
+      submit: '再設定'

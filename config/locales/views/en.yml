@@ -6,10 +6,12 @@ en:
     search: 'Search'
     cancel: 'Cancel'
     update: 'Update'
+    delete: 'Delete'
     edit: 'Edit'
     delete: 'Delete'
     choose_file: 'Choose file'
     back_to_root: 'Back to home'
+    oauths: 'Continue with %{provider}'
   user_sessions:
     register_link: 'Sign up'
     reset_password_link: 'Forgot password?'
@@ -36,6 +38,9 @@ en:
       title: 'Show board'
     edit:
       title: 'Edit board'
+    delete:
+      title: 'Delete board'
+      body: 'Are you sure to delete this board?'
   comments:
     index:
       no_data: 'There are no comments yet.'
@@ -43,8 +48,8 @@ en:
       body_placeholder: 'Input comment...'
       submit: 'Post your comment'
     delete:
-      title: 'Delete board'
-      body: 'Are you sure to delete this board?'
+      title: 'Delete comment'
+      confirm_message: 'Are you sure to delete this comment?'
   bookmarks:
     index:
       title: 'Bookmark list'
@@ -59,3 +64,9 @@ en:
   roles:
     admin: 'Admin'
     general: 'General'
+  password_resets:
+    new:
+      title: 'Account recovery'
+      submit: 'Request reset password'
+    edit:
+      title: 'Reset password'

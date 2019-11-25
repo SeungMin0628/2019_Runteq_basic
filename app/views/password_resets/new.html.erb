@@ -1,0 +1,22 @@
+<%= content_for :title, t('password_resets.new.title')  %>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h3><%= t('password_resets.new.title') %></h3>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <%= form_with(url: password_resets_path, method: :post, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.label :email, User.human_attribute_name(:email) %>
+          <%= f.email_field :email, class: 'form-control', required: true %>
+        </div>
+        <div class="action">
+          <%= f.submit t('password_resets.new.submit'), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

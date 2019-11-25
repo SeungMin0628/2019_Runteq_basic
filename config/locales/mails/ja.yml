@@ -1,0 +1,5 @@
+ja:
+  mails:
+    password_resets:
+      create:
+        title: 'パスワード再設定'

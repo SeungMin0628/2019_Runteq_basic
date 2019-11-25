@@ -1,0 +1,5 @@
+web:
+  host: 'localhost:3000'
+
+mail:
+  from: 'from@example.com'

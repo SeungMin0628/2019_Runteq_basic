@@ -27,6 +27,13 @@ en:
         sessions:
           has_no_role: "Invalid role."
 
+      password_resets:
+        create: 'Instructions have been sent to your email.'
+        update: 'Password was successfully updated.'
+
+      oauths:
+        callback: 'Logged in from %{provider}!'
+
     danger:
       user_sessions:
         create: 'Log in is failed. Please check your email address or password.'
@@ -42,3 +49,10 @@ en:
 
       comments:
         create: 'Post failed. Please check your comment again.'
+        update: 'Update failed. Please check your comment again.'
+
+      password_resets:
+        update: 'Reset password is failed. Please check it again.'
+
+      oauths:
+        callback: 'Failed to login from　%{provider}!'

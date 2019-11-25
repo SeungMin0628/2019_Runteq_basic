@@ -24,7 +24,7 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find(params[:id])
     @comment = Comment.new
-    @comments = @board.comments.exists? ? @board.comments.includes(:user) : nil
+    @comments = @board.comments.exists? ? @board.comments.includes(:user).recent : nil
   end
 
   def edit; end

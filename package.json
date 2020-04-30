@@ -5,7 +5,7 @@
     "@fortawesome/fontawesome-free": "^5.11.2",
     "admin-lte": "^3.0",
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   },
   "version": "1.0.0",
   "main": "index.js",

@@ -50,7 +50,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'draper'
 
 # Use kaminari, for Pagination
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 
 # User CarrierWave, solution for file uploads for Rails
 gem 'carrierwave', '~> 2.0'
